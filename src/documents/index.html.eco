@@ -1,0 +1,46 @@
+---
+layout: 'default'
+title: 'Home'
+---
+
+<!-- Main hero unit for a primary marketing message or call to action -->
+    <div class="splash pure-u-1">
+        <div class="pure-g-r">
+            <div class="pure-u-1-3">
+                <div class="l-box splash-image">
+                    <img src="https://googledrive.com/host/0BxIxK0gS2WsvTWNTZXFEZ05ueGc/suitup_mikeumus.jpg"
+                         alt="Mikeumus suit up">
+                </div>
+            </div>
+
+            <div class="pure-u-2-3">
+                <div class="l-box splash-text">
+                    <h1 class="splash-head">
+                        Hi, I'm Mikeumus. <sub> Nice (for Mikeum.us) to meet you. </sub>
+                    </h1>
+
+                    <h2 class="splash-subhead">
+                        I run a small web design & development company, Mass Distribution Media. I dream too big. I'm going to Mars. I'm passionate about technology and see many ways how it may fix most of humanities issues. I see the future and dream in the present. In my own reality "Impossible is Impossible". <%- @getIconmonstrBlock('lightbulb10','height:36px;width:36px;position:absolute;fill:orange;') %>
+                    </h2>
+
+                    <!-- <p>
+                        <a href="#" class="pure-button primary-button">Colorful</a> <a href="#" class="pure-button pure-button-success">Useless</a> <a href="#" class="pure-button pure-button-warning">Buttons</a>
+                    </p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content pure-u-1">
+        <div class="pure-g-r content-ribbon">
+            <div class="pure-u-1">
+                <nav class="linklist">
+                    <% for document in @getCollection('posts').toJSON(): %>
+                        <li><span><%= document.date.toDateString() %></span>
+                        &raquo;
+                        <a href="<%= document.url %>"><%= document.title %> <span href="#" class="pure-button">READ</span></a> <%- @getIconmonstrBlock(document.iconmonstr,'fill:orange','iconmonstr-home-posts') %></li>
+                    <% end %>
+                </nav>
+            </div>
+        </div>
+    </div>
