@@ -29,6 +29,7 @@ a{color:#FF9900;text-decoration: none}
 
     .header .pure-menu {
         padding: 0.5em;
+        opacity: 0.7;
     }
 
         .header .pure-menu li a:hover,
@@ -102,6 +103,7 @@ body .primary-button {
 }
 
 .iconmonstr-home-posts{
+    fill:orange;
     height:36px;
     width:36px;
     position:absolute;

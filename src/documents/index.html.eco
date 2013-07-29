@@ -38,7 +38,7 @@ title: 'Home'
                     <% for document in @getCollection('posts').toJSON(): %>
                         <li><span><%= document.date.toDateString() %></span>
                         &raquo;
-                        <a href="<%= document.url %>"><%= document.title %> <span href="#" class="pure-button">READ</span></a> <%- @getIconmonstrBlock(document.iconmonstr,'fill:orange','iconmonstr-home-posts') %></li>
+                        <a href="<%= document.url %>"><%= document.title %> <span href="#" class="pure-button">READ</span></a> <%- @getIconmonstrBlock(document.iconmonstr,'','iconmonstr-home-posts') %></li>
                     <% end %>
                 </nav>
             </div>
