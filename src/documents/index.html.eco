@@ -16,11 +16,11 @@ title: 'Home'
             <div class="pure-u-2-3">
                 <div class="l-box splash-text">
                     <h1 class="splash-head">
-                        Hi, I'm Mikeumus. <sub> Nice (for Mikeum.us) to meet you. </sub>
+                        Hi, I'm Mikeumus<a href="#" data-placement="right" rel="tipsy" data-content="Like Maximus the Greek scholar. A nickname since middle school.">.</a> <sub> Nice (for Mikeum.us) to meet you. </sub>
                     </h1>
 
                     <h2 class="splash-subhead">
-                        I run a small web design & development company, Mass Distribution Media. I dream too big. I'm going to Mars. I'm passionate about technology and see many ways how it may fix most of humanities issues. I see the future and dream in the present. In my own reality "Impossible is Impossible". <%- @getIconmonstrBlock('lightbulb10','height:36px;width:36px;position:absolute;fill:orange;') %>
+                        I run a web design & development company, <a target="_blank" href="http://massdistributionmedia.com/">Mass Distribution Media</a>. I dream too big. I'm going to Mars. I'm passionate about technology and see many ways how it may fix most of humanities issues. I see the future and dream in the present. In my own reality "Impossible is Impossible". <%- @getIconmonstrTipsyBlock('lightbulb10','lightbulb-home','data-placement="right" data-content="I am an idea man. A Neo-Renaissance Man."') %>
                     </h2>
 
                     <!-- <p>
@@ -36,9 +36,9 @@ title: 'Home'
             <div class="pure-u-1">
                 <nav class="linklist">
                     <% for document in @getCollection('posts').toJSON(): %>
-                        <li><span><%= document.date.toDateString() %></span>
-                        &raquo;
-                        <a href="<%= document.url %>"><%= document.title %> <span href="#" class="pure-button">READ</span></a> <%- @getIconmonstrBlock(document.iconmonstr,'','iconmonstr-home-posts') %></li>
+                        <li><a class="home-post-title" href="<%= document.url %>"><%- @getIconmonstrTipsyBlock(document.iconmonstrTipsy,'iconmonstr-home-posts',document.tipsy) %>
+                        <%= document.title %> </a> &raquo; <span>Updated <%= document.date.toDateString() %></span> <a href="<%= document.url %>" class="pure-button">READ</a>
+                        </li>
                     <% end %>
                 </nav>
             </div>

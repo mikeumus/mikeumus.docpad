@@ -1,0 +1,51 @@
+{
+  "name": "docpad-plugin-iconmonstrtipsy",
+  "version": "2.0.0",
+  "description": "Eco iconmonstr SVG icons as functions for Docpad via getBlock() codes, plus a tooltip argument!",
+  "homepage": "https://github.com/mikeumus/docpad-plugin-iconmonstrtipsy.git",
+  "keywords": [
+    "docpad",
+    "docpad-plugin",
+    "iconmonstr",
+    "svg", "svg icon", "svgs", "icons", 
+    "tipsy", "tip", "tipsy-component", "tipsy", "tooltip"
+  ],
+  "author": {
+    "name": "MDM Inc",
+    "email": "sales@mdm.cc",
+    "url": "http://mdm.cm"
+  },
+  "maintainers": [
+    {
+      "name": "Michael Mooring",
+      "email": "mike@mdm.cm",
+      "url": "http://mdm.cm"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Michael Mooring",
+      "email": "mike@mdm.cm",
+      "url": "http://mdm.cm"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/mikeumus/docpad-plugin-iconmonstrtipsy.git/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikeumus/docpad-plugin-iconmonstrtipsy.git"
+  },
+  "engines": {
+    "node": ">=0.8.x",
+    "docpad": ">=6.x"
+  },
+  "dependencies": {
+    "yui": ">=3.11.0"
+    },
+  "devDependencies": {},
+  "main": "./iconmonstrtipsy.plugin.coffee",
+  "readmeFilename": "README.md",
+  "_id": "docpad-plugin-iconmonstrtipsy@2.0.0",
+  "_from": "docpad-plugin-iconmonstrtipsy@"
+}

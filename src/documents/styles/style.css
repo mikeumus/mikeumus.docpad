@@ -1,10 +1,11 @@
 body {
-    margin: 0 auto;
+    margin: 77px auto 0;
     line-height: 1.7em;
 }
 
 a{color:#FF9900;text-decoration: none}
 
+.post{min-height: 377px;}
 .linklist li{
     background: #FFFEF5;
     padding: 21px;
@@ -14,9 +15,22 @@ a{color:#FF9900;text-decoration: none}
     box-shadow: 1px 3px 33px rgba(198, 202, 145, 0.33);
 }
 
+.lightbulb-home{
+    height:36px;width:36px;position:absolute;fill:orange;
+}
+
 .linklist .pure-button{
     color: #888;
     margin:0 0 0 13px;
+    box-shadow:1px 2px rgba(0,0,0,0.3);
+}
+.linklist .pure-button:active{
+    color: #666;
+}
+.linklist .pure-button:active{
+    color: #999;
+    margin:1px 0 0 13px;
+    box-shadow:1px 1px rgba(0,0,0,0.3);
 }
 
 .l-box {
@@ -57,8 +71,8 @@ body .primary-button {
     }
 
 .splash {
-    margin: 2em auto 0;
-    padding: 3em 0.5em 0.5em;
+    margin: -21px auto 0;
+    padding: 1.7em 0.5em 0.7em;
     background: #E5E9E8;
     box-shadow: 1px 7px 117px rgba(101, 107, 106, 0.47);
     border-bottom: 1px solid #EBEEED;
@@ -88,7 +102,7 @@ body .primary-button {
         opacity: 0.9;
     }
 
-
+.content{letter-spacing: 0 !important;}
 .content .content-subhead {
     color: #999;
     padding-bottom: 0.3em;
@@ -102,12 +116,15 @@ body .primary-button {
     margin: 3em;
 }
 
+.home-post-title{
+    margin: 0 0 0 17px;
+}
+
 .iconmonstr-home-posts{
     fill:orange;
     height:36px;
     width:36px;
-    position:absolute;
-    margin: 0 21px;
+    float: left;
 }
 
 .ribbon {
@@ -121,10 +138,17 @@ body .primary-button {
         font-weight: normal;
     }
 
-.footer {
-    background: #111;
-    color: #666;
-    text-align: center;
-    padding: 1em;
-    font-size: 80%;
-}
+footer{margin: 33px;}
+    .footer {
+        background: #111;
+        color: #666;
+        text-align: center;
+        padding: 1em;
+        font-size: 80%;
+    }
+    .os{
+        height: 23px;
+        width: 23px;
+        fill: #777;
+        position: absolute;
+    }

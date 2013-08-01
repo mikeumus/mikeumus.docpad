@@ -44,7 +44,7 @@
 <body>
 
 <!-- Markup -->
-<div class="content pure-g-r">
+<div class="content main pure-g-r">
 	<div class="header pure-u-1">
 		<div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
 			<a class="pure-menu-heading" href="/">Mikeum.us</a>
@@ -63,7 +63,7 @@
 
 	<div class="footer pure-u-1">
 		&copy; Mikeum.us <%- (new Date()).getFullYear() %>.
-		last updated at <%= @site.date.toISOString() %>
+		last updated at <%= @site.date.toISOString() %> _ <a href="https://github.com/mikeumus/mikeum.us" target="_blank"><%- @getIconmonstrTipsyBlock('code4','os','data-placement="right" data-content="Mikeum.us is open-source on Github.com"') %></a>
 	</div>
 </div>
 
