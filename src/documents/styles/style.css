@@ -5,7 +5,9 @@ body {
 
 a{color:#FF9900;text-decoration: none}
 
-.post{min-height: 377px;}
+.post{min-height: 377px;margin: 33px;}
+    .post-content{margin: 33px;}
+
 .linklist li{
     background: #FFFEF5;
     padding: 21px;
