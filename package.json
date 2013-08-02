@@ -39,7 +39,7 @@
     "docpad-plugin-stylus": "~2.4.0",
     "docpad-plugin-text": "~2.2.4",
     "docpad-plugin-ghpages": "~2.3.0",
-    "docpad-plugin-iconmonstrtipsy": "~2.0.1"
+    "docpad-plugin-iconmonstrtipsy": "~2.0.5"
   },
   "devDependencies": {
     "docpad-plugin-livereload": "~2.5.1"

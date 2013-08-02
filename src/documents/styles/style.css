@@ -1,11 +1,18 @@
 body {
-    margin: 77px auto 0;
+    margin: 56px auto 0;
     line-height: 1.7em;
 }
 
 a{color:#FF9900;text-decoration: none}
 
-.post{min-height: 377px;margin: 33px;}
+::-moz-selection{background:#5af;color:#fff;text-shadow:none}
+::selection{background:#5af;color:#fff;text-shadow:none}
+::-webkit-scrollbar{width:17px;background:#fcfcfc}
+::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.2)}
+::-webkit-scrollbar-thumb{background:rgba(102,51,0,0.2) url(https://googledrive.com/host/0B9LVk4xbDIJTU0FvQll6RWlCNnM/ticks.png);-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.2)}
+::-webkit-scrollbar-thumb:window-inactive{background:rgba(216,210,206,0.3)}
+
+.post{min-height: 377px;margin: 33px;padding-top: 33px;}
     .post-content{margin: 33px;}
 
 .linklist li{
@@ -39,6 +46,10 @@ a{color:#FF9900;text-decoration: none}
     padding: 1em;
 }
 
+.main{
+    background: url(https://googledrive.com/host/0B9LVk4xbDIJTU0FvQll6RWlCNnM/subtle_white_feathers.png);
+}
+
 .header {
     margin: 0 0;
 }
@@ -46,6 +57,10 @@ a{color:#FF9900;text-decoration: none}
     .header .pure-menu {
         padding: 0.5em;
         opacity: 0.7;
+        background: url(https://googledrive.com/host/0B9LVk4xbDIJTU0FvQll6RWlCNnM/ticks.png);
+    }
+    .header .pure-menu:hover{
+        opacity: 1;
     }
 
         .header .pure-menu li a:hover,
@@ -73,7 +88,7 @@ body .primary-button {
     }
 
 .splash {
-    margin: -21px auto 0;
+    margin:0 auto;
     padding: 1.7em 0.5em 0.7em;
     background: #E5E9E8;
     box-shadow: 1px 7px 117px rgba(101, 107, 106, 0.47);
@@ -142,7 +157,7 @@ body .primary-button {
 
 footer{margin: 33px;}
     .footer {
-        background: #111;
+        background: #555 url(https://googledrive.com/host/0B9LVk4xbDIJTU0FvQll6RWlCNnM/cartographer.png);
         color: #666;
         text-align: center;
         padding: 1em;

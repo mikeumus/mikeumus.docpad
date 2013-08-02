@@ -45,9 +45,10 @@
 
 <!-- Markup -->
 <div class="content main pure-g-r">
+	<a href="/">
 	<div class="header pure-u-1">
 		<div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
-			<a class="pure-menu-heading" href="/">Mikeum.us</a>
+			<span class="pure-menu-heading">Mikeum.us</span>
 
 			<ul>
 				<% for document in @getCollection('pages').toJSON(): %>
@@ -58,6 +59,7 @@
 			</ul>
 		</div>
 	</div>
+	</a>
 
 	<%- @content %>
 
