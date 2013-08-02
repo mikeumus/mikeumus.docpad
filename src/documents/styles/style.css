@@ -1,4 +1,5 @@
 body {
+    color: #333;
     margin: 56px auto 0;
     line-height: 1.7em;
 }
@@ -86,6 +87,13 @@ body .primary-button {
     .pure-button-warning {
         background: rgb(223, 117, 20); /* this is an orange */
     }
+
+.yui3-tipsy{
+    color: rgb(241, 241, 241);
+    background-image: url(https://googledrive.com/host/0B9LVk4xbDIJTU0FvQll6RWlCNnM/cartographer.png);
+    background-color: rgb(68, 68, 68);
+    box-shadow: rgba(0, 0, 0, 0.7) 1px 2px 7px;
+}
 
 .splash {
     margin:0 auto;
