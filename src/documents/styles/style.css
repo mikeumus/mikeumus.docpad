@@ -54,16 +54,21 @@ a{color:#FF9900;text-decoration: none}
 .header {
     margin: 0 0;
 }
-
     .header .pure-menu {
         padding: 0.5em;
         opacity: 0.7;
         background: url(https://googledrive.com/host/0B9LVk4xbDIJTU0FvQll6RWlCNnM/ticks.png);
     }
+    .pure-menu.pure-menu-open{
+        z-index: 1;
+    }
+    .pure-menu-heading{
+        float: left;
+        margin: 0.5em 0;
+    }
     .header .pure-menu:hover{
         opacity: 1;
     }
-
         .header .pure-menu li a:hover,
         .header .pure-menu li a:focus {
             background: none;
@@ -114,10 +119,15 @@ body .primary-button {
         opacity: 0.7;
     }
     .splash .splash-subhead {
+        position: absolute;
+        right: 0;
         color: #999;
+        width: 720px;
         font-weight: 300;
-        letter-spacing: 2px;
+        text-align: right;
         line-height: 42px;
+        letter-spacing: 2px;
+        margin: 10px 94px 0 0;
     }
     .splash .pure-button {
         font-size: 150%;
@@ -129,12 +139,12 @@ body .primary-button {
 
 .content{letter-spacing: 0 !important;}
 .content .content-subhead {
+    margin: 0;
     color: #999;
     padding-bottom: 0.3em;
-    text-transform: uppercase;
-    margin: 0;
-    border-bottom: 2px solid #eee;
     display: inline-block;
+    text-transform: uppercase;
+    border-bottom: 2px solid #eee;
 }
 
 .content .content-ribbon {
@@ -145,12 +155,26 @@ body .primary-button {
     margin: 0 0 0 17px;
 }
 
+.pure-menu.pure-menu-horizontal>ul{
+    float: right;
+    margin: 11px 45px -10px 0;
+}
+
 .iconmonstr-home-posts{
     fill:orange;
     height:36px;
     width:36px;
     float: left;
 }
+.iconmonstr-nav-pages{
+    height:39px;
+    width:39px;
+    margin: -28px 0 0 -13px;
+    fill:rgba(255,255,255,0.45);
+}
+    .iconmonstr-nav-pages:hover{
+        fill:rgba(255,255,255,0.77);
+    }
 
 .ribbon {
     background: #eee;
@@ -176,4 +200,12 @@ footer{margin: 33px;}
         width: 23px;
         fill: #777;
         position: absolute;
+    }
+
+@media screen and (max-width: 1150px) {
+    .splash .splash-subhead{
+        position: relative;right: 0;
+        width: auto;
+        text-align: left;
+        margin: 0;
     }

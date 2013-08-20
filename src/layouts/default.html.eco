@@ -45,21 +45,18 @@
 
 <!-- Markup -->
 <div class="content main pure-g-r">
-	<a href="/">
 	<div class="header pure-u-1">
 		<div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
-			<span class="pure-menu-heading">Mikeum.us</span>
-
+			<a href="/"><span class="pure-menu-heading">Mikeum.us</span></a>
 			<ul>
 				<% for document in @getCollection('pages').toJSON(): %>
 					<li typeof="sioc:Page" about="<%= document.url %>" class="<%= 'active'  if @document.url is document.url %>">
-						<a href="<%= document.url %>" property="dc:title"><%= document.title %></a>
+						<a href="<%= document.url %>" property="dc:title"><%- @getIconmonstrTipsyBlock(document.iconmonstrTipsy,'navIcon','iconmonstr-nav-pages',document.tipsy) %></a>
 					</li>
 				<% end %>
 			</ul>
 		</div>
 	</div>
-	</a>
 
 	<%- @content %>
 

@@ -20,12 +20,8 @@ title: 'Home'
                     </h1>
 
                     <h2 class="splash-subhead">
-                        I run a web design & development company, <a target="_blank" href="http://massdistributionmedia.com/">Mass Distribution Media</a>. I dream too big. I'm going to Mars. I'm passionate about technology and see many ways how it may fix most of humanity's issues. I see the future and dream in the present. In my own reality "Impossible is Impossible". <%- @getIconmonstrTipsyBlock('lightbulb10','lightbulbId','lightbulb-home','data-placement="right" data-content="I am an idea man. A Neo-Renaissance Man."') %>
+                        I run a web design & development company, <a target="_blank" href="http://massdistributionmedia.com/">Mass Distribution Media</a>. I dream too big. I'm going to Mars. I'm passionate about technology and see many ways how it may fix most of humanity's issues. I see the future and dream in the present. In my own reality "Impossible is Impossible". <%- @getIconmonstrTipsyBlock('lightbulb10','lightbulbId','lightbulb-home','data-placement="left" data-content="I am an idea man. A Neo-Renaissance Man."') %>
                     </h2>
-
-                    <!-- <p>
-                        <a href="#" class="pure-button primary-button">Colorful</a> <a href="#" class="pure-button pure-button-success">Useless</a> <a href="#" class="pure-button pure-button-warning">Buttons</a>
-                    </p> -->
                 </div>
             </div>
         </div>
