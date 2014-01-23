@@ -2,13 +2,14 @@ body {
     color: #333;
     margin: 56px auto 0;
     line-height: 1.7em;
+    background: url(https://googledrive.com/host/0B9LVk4xbDIJTU0FvQll6RWlCNnM/subtle_white_feathers.png);
 }
 
 a{color:#FF9900;text-decoration: none}
 
 ::-moz-selection{background:#5af;color:#fff;text-shadow:none}
 ::selection{background:#5af;color:#fff;text-shadow:none}
-::-webkit-scrollbar{width:17px;background:#fcfcfc}
+::-webkit-scrollbar{width:33px;background:#fcfcfc}
 ::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.2)}
 ::-webkit-scrollbar-thumb{background:rgba(102,51,0,0.2) url(https://googledrive.com/host/0B9LVk4xbDIJTU0FvQll6RWlCNnM/ticks.png);-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.2)}
 ::-webkit-scrollbar-thumb:window-inactive{background:rgba(216,210,206,0.3)}
@@ -48,8 +49,11 @@ a{color:#FF9900;text-decoration: none}
 }
 
 .main{
-    background: url(https://googledrive.com/host/0B9LVk4xbDIJTU0FvQll6RWlCNnM/subtle_white_feathers.png);
+    padding: 55px 0 0 0;
 }
+    .main-inner{
+        padding: 0 13px;
+    }
 
 .header {
     margin: 0 0;
@@ -194,6 +198,9 @@ footer{margin: 33px;}
         text-align: center;
         padding: 1em;
         font-size: 80%;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
     }
     .os{
         height: 23px;

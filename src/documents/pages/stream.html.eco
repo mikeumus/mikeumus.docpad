@@ -1,10 +1,10 @@
 ---
 title: Stream
-layout: page
+layout: default
 tags: ['page', 'Stream']
 pageOrder: 1
 iconmonstrTipsy: 'stream'
 tipsy: 'data-placement="below" data-content="<strong>Stream</strong>.<br/> A log of my life."'
 ---
 
-<%- @getTimelinesBlock() %>
+<h1> Coming soon </h1>
