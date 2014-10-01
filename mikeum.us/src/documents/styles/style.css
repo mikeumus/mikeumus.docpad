@@ -1,0 +1,215 @@
+body {
+    color: #333;
+    margin: 56px auto 0;
+    line-height: 1.7em;
+    background: url(https://googledrive.com/host/0B9LVk4xbDIJTU0FvQll6RWlCNnM/subtle_white_feathers.png);
+}
+
+a{color:#FF9900;text-decoration: none}
+
+::-moz-selection{background:#5af;color:#fff;text-shadow:none}
+::selection{background:#5af;color:#fff;text-shadow:none}
+::-webkit-scrollbar{width:33px;background:#fcfcfc}
+::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.2)}
+::-webkit-scrollbar-thumb{background:rgba(102,51,0,0.2) url(https://googledrive.com/host/0B9LVk4xbDIJTU0FvQll6RWlCNnM/ticks.png);-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.2)}
+::-webkit-scrollbar-thumb:window-inactive{background:rgba(216,210,206,0.3)}
+
+.post{min-height: 377px;margin: 33px;padding-top: 33px;}
+    .post-content{margin: 33px;}
+
+.linklist li{
+    background: #FFFEF5;
+    padding: 21px;
+    margin: 7px 0;
+    list-style: none;
+    border: 1px solid rgb(250, 255, 187);
+    box-shadow: 1px 3px 33px rgba(198, 202, 145, 0.33);
+}
+
+.lightbulb-home{
+    height:36px;width:36px;position:absolute;fill:orange;
+}
+
+.linklist .pure-button{
+    color: #888;
+    margin:0 0 0 13px;
+    box-shadow:1px 2px rgba(0,0,0,0.3);
+}
+.linklist .pure-button:active{
+    color: #666;
+}
+.linklist .pure-button:active{
+    color: #999;
+    margin:1px 0 0 13px;
+    box-shadow:1px 1px rgba(0,0,0,0.3);
+}
+
+.l-box {
+    padding: 1em;
+}
+
+.main{
+    padding: 33px 0;
+}
+    .main-inner{
+        padding: 0 13px;
+    }
+
+.header {
+    margin: 0 0;
+}
+    .header .pure-menu {
+        padding: 0.5em;
+        opacity: 0.7;
+        background: url(https://googledrive.com/host/0B9LVk4xbDIJTU0FvQll6RWlCNnM/ticks.png);
+    }
+    .pure-menu.pure-menu-open{
+        z-index: 1;
+    }
+    .pure-menu-heading{
+        float: left;
+        margin: 0.5em 0;
+    }
+    .header .pure-menu:hover{
+        opacity: 1;
+    }
+        .header .pure-menu li a:hover,
+        .header .pure-menu li a:focus {
+            background: none;
+            border: none;
+            color: #aaa;
+        }
+
+body .primary-button {
+    background: #02a6eb;
+    color: #fff;
+}
+
+    .pure-button-success {
+        background: rgb(28, 184, 65); /* this is a green */
+    }
+
+    .pure-button-error {
+        background: rgb(202, 60, 60); /* this is a maroon */
+    }
+
+    .pure-button-warning {
+        background: rgb(223, 117, 20); /* this is an orange */
+    }
+
+.yui3-tipsy{
+    color: rgb(241, 241, 241);
+    background-image: url(https://googledrive.com/host/0B9LVk4xbDIJTU0FvQll6RWlCNnM/cartographer.png);
+    background-color: rgb(68, 68, 68);
+    box-shadow: rgba(0, 0, 0, 0.7) 1px 2px 7px;
+}
+
+.splash {
+    margin:0 auto;
+    padding: 1.7em 0.5em 0.7em;
+    background: #E5E9E8;
+    box-shadow: 1px 7px 117px rgba(101, 107, 106, 0.47);
+    border-bottom: 1px solid #EBEEED;
+}
+    .splash .splash-head {
+        font-size: 300%;
+        margin: 0;
+        line-height: 1.2em;
+        color: #A386AC;
+    }
+    .splash .splash-head sub{
+        font-size: 11px;
+        color: #999;
+        opacity: 0.7;
+    }
+    .splash .splash-subhead {
+        color: #999;
+        width: 698px;
+        font-weight: 300;
+        text-align: right;
+        line-height: 42px;
+        letter-spacing: 2px;
+    }
+    .splash .pure-button {
+        font-size: 150%;
+    }
+
+    .splash-image{
+        opacity: 0.9;
+    }
+
+.content{letter-spacing: 0 !important;}
+.content .content-subhead {
+    margin: 0;
+    color: #999;
+    padding-bottom: 0.3em;
+    display: inline-block;
+    text-transform: uppercase;
+    border-bottom: 2px solid #eee;
+}
+
+.content .content-ribbon {
+    margin: 3em;
+}
+
+.home-post-title{
+    margin: 0 0 0 17px;
+}
+
+.pure-menu.pure-menu-horizontal>ul{
+    float: right;
+    margin: 11px 45px -10px 0;
+}
+
+.iconmonstr-home-posts{
+    fill:orange;
+    height:36px;
+    width:36px;
+    float: left;
+}
+.iconmonstr-nav-pages{
+    height:39px;
+    width:39px;
+    margin: -28px 0 0 -13px;
+    fill:rgba(255,255,255,0.45);
+}
+    .iconmonstr-nav-pages:hover{
+        fill:rgba(255,255,255,0.77);
+    }
+
+.ribbon {
+    background: #eee;
+    text-align: center;
+    padding: 2em;
+    color: #999;
+}
+    .ribbon h2 {
+        display: inline;
+        font-weight: normal;
+    }
+
+footer{margin: 33px;}
+    .footer {
+        background: #555 url(https://googledrive.com/host/0B9LVk4xbDIJTU0FvQll6RWlCNnM/cartographer.png);
+        color: #666;
+        text-align: center;
+        padding: 1em;
+        font-size: 80%;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
+    .os{
+        height: 23px;
+        width: 23px;
+        fill: #777;
+        position: absolute;
+    }
+
+@media screen and (max-width: 1150px) {
+    .splash .splash-subhead{
+        position: relative;right: 0;
+        width: auto;
+        text-align: left;
+        margin: 0;
+    }

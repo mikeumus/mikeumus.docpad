@@ -1,0 +1,51 @@
+{
+  "name": "mikeum.us",
+  "version": "0.0.1",
+  "description": "Michael 'Mikeumus' Duane Mooring's personal website.",
+  "keywords": [
+    "docpad",
+    "website",
+    "mikeumus",
+    "Michael Duane Mooring"
+  ],
+  "author": "Mass Distribution Media <mike@mdm.cm> (http://mdm.cm)",
+  "maintainers": [
+    "Michael D Mooring <mike@mdm.cm> (https://github.com/mikeumus)"
+  ],
+  "contributors": [
+    "Michael D Mooring <mike@mdm.cm> (https://github.com/mikeumus)"
+  ],
+  "bugs": {
+    "url": "https://github.com/mikeumus/mikeum.us/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikeumus/mikeum.us.git"
+  },
+  "engines": {
+    "node": ">=0.10",
+    "npm": ">=1.2"
+  },
+  "dependencies": {
+    "docpad": "~6.60.3",
+    "docpad-plugin-downloader": "~2.1.4",
+    "docpad-plugin-cleanurls": "~2.6.2",
+    "docpad-plugin-coffeescript": "~2.2.3",
+    "docpad-plugin-eco": "~2.0.3",
+    "docpad-plugin-less": "~2.4.0",
+    "docpad-plugin-marked": "~2.2.0",
+    "docpad-plugin-partials": "~2.8.1",
+    "docpad-plugin-related": "~2.2.2",
+    "docpad-plugin-stylus": "~2.5.0",
+    "docpad-plugin-text": "~2.3.2",
+    "docpad-plugin-ghpages": "~2.4.2",
+    "docpad-plugin-iconmonstrtipsy": "~2.0.14"
+  },
+  "devDependencies": {
+    "docpad-plugin-livereload": "~2.5.6"
+  },
+  "main": "node_modules/docpad/bin/docpad-server",
+  "scripts": {
+    "start": "node_modules/docpad/bin/docpad-server"
+  }
+}

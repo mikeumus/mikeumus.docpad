@@ -1,0 +1,45 @@
+{
+  "name": "docpad-plugin-timeline",
+  "version": "2.0.0",
+  "description": "NOT READY FOR USE. Timeline.js block.",
+  "homepage": "https://github.com/mikeumus/docpad-plugin-timeline.git",
+  "keywords": [
+    "docpad", 
+    "docpad-plugin",
+    "timeline", "timeline-js"
+  ],
+  "author": {
+    "name": "MDM Inc",
+    "email": "sales@mdm.cc",
+    "url": "http://mdm.cm"
+  },
+  "maintainers": [
+    {
+      "name": "Michael Mooring",
+      "email": "mike@mdm.cm",
+      "url": "http://mdm.cm"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Michael Mooring",
+      "email": "mike@mdm.cm",
+      "url": "http://mdm.cm"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/mikeumus/docpad-plugin-timeline.git/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikeumus/docpad-plugin-timeline.git"
+  },
+  "engines": {
+    "node": ">=0.8.x",
+    "docpad": ">=6.x"
+  },
+  "main": "./timeline.plugin.coffee",
+  "readmeFilename": "readme.md",
+  "_id": "docpad-plugin-timeline@2.0.0",
+  "_from": "docpad-plugin-timeline@2"
+}
