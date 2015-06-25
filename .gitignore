@@ -1,3 +1,4 @@
 node_modules/
 out/
 src/files/vendor/twitter-bootstrap
+.docpad.db

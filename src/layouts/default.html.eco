@@ -35,7 +35,7 @@
 
 	<!-- Styles -->
 	<%- @getBlock('styles').add(@site.styles).toHTML() %>
-	
+
 	<!-- Typekit ajf8ggy.js -->
 	<script>
     try { Typekit.load(); } catch (e) {}
@@ -52,7 +52,7 @@
 				<ul>
 					<% for document in @getCollection('pages').toJSON(): %>
 						<li typeof="sioc:Page" about="<%= document.url %>" class="<%= 'active'  if @document.url is document.url %>">
-							<a href="<%= document.url %>" property="dc:title"><%- @getIconmonstrTipsyBlock(document.iconmonstrTipsy,'navIcon','iconmonstr-nav-pages',document.tipsy) %></a>
+							<a href="<%= document.url %>" property="dc:title">Resume</a>
 						</li>
 					<% end %>
 				</ul>
@@ -64,7 +64,7 @@
 	</div>
 	<div class="footer pure-u-1">
 		&copy; Mikeum.us <%- (new Date()).getFullYear() %>.
-		last updated at <%= @site.date.toISOString() %> _ <a href="https://github.com/mikeumus/mikeum.us" target="_blank"><%- @getIconmonstrTipsyBlock('code4','os','os','data-placement="above" data-content="Mikeum.us is open-source on Github.com & hosted via Github Pages. Powered by DocPad. Built with YUI & PureCSS."') %></a>
+		last updated at <%= @site.date.toISOString() %> _ <a href="https://github.com/mikeumus/mikeum.us" target="_blank">Mikeum.us is open-source on Github.com & hosted via Github Pages. Powered by DocPad. Built with YUI & PureCSS.</a>
 	</div>
 </div>
 

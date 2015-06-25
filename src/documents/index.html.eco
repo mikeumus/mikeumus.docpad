@@ -3,7 +3,6 @@ layout: 'default'
 title: 'Home'
 ---
 
-<!-- Main hero unit for a primary marketing message or call to action -->
     <div class="splash pure-u-1">
         <div class="pure-g-r">
             <div class="pure-u-1-3">
@@ -20,7 +19,7 @@ title: 'Home'
                     </h1>
 
                     <h2 class="splash-subhead">
-                        I run a web design & development company, <a target="_blank" href="http://massdistributionmedia.com/">Mass Distribution Media</a>. I dream too big. I'm going to Mars. I'm passionate about technology and see many ways how it may fix most of humanity's issues. I see the future and dream in the present. In my own reality "Impossible is Impossible". <%- @getIconmonstrTipsyBlock('lightbulb10','lightbulbId','lightbulb-home','data-placement="left" data-content="I am an idea man. A Neo-Renaissance Man."') %>
+                        I'm an entreprenuer in the areas of web design, development and technology. I dream massive. I'm going to Mars. I pretend I'm on Mars now. I'm passionate about technology and see many ways how it may fix humanity's issues. In my own reality "Impossible is Impossible".
                     </h2>
                 </div>
             </div>
@@ -32,8 +31,11 @@ title: 'Home'
             <div class="pure-u-1">
                 <nav class="linklist">
                     <% for document in @getCollection('posts').toJSON(): %>
-                        <li><a class="home-post-title" href="<%= document.url %>"><%- @getIconmonstrTipsyBlock(document.iconmonstrTipsy,'blogListIconId','iconmonstr-home-posts',document.tipsy) %>
-                        <%= document.title %> </a> &raquo; <span>Updated <%= document.date.toDateString() %></span> <a href="<%= document.url %>" class="pure-button">READ</a>
+                        <li><a class="home-post-title" href="<%= document.url %>">
+                        <%= document.title %> </a>
+                        <!-- &raquo; <span>Updated <%= document.date.toDateString() %></span> -->
+                        <a href="<%= document.url %>" class="pure-button">READ</a>
+
                         </li>
                     <% end %>
                 </nav>
