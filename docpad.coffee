@@ -41,16 +41,13 @@ docpadConfig = {
 
 			# Styles
 			styles: [
-				"http://yui.yahooapis.com/pure/0.2.0/pure-min.css"
-				"http://yui.yahooapis.com/gallery-2013.03.27-22-06/build/gallery-widget-pointer/assets/gallery-widget-pointer-core.css"
-				"http://yui.yahooapis.com/gallery-2013.03.27-22-06/build/gallery-tipsy/assets/skins/sam/gallery-tipsy.css"
-				"http://yui.yahooapis.com/gallery-2013.03.27-22-06/build/gallery-popover/assets/skins/sam/gallery-popover-skin.css"
+				"//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css"
 				"/styles/style.css"
 			]
 
 			# Scripts
 			scripts: [
-				"http://yui.yahooapis.com/3.11.0/build/yui/yui-min.js"
+				"//cdnjs.cloudflare.com/ajax/libs/yui/3.18.0/yui/yui-min.js"
 				"/scripts/script.js"
 			]
 
