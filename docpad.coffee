@@ -21,11 +21,11 @@ docpadConfig = {
 			]
 
 			# The default title of our website
-			title: "Michael Duane Mooring"
+			title: "Mikeum.us"
 
 			# The website description (for SEO)
 			description: """
-				
+				Mikeumus' blog.
 				"""
 
 			# The website keywords (for SEO) separated by commas
@@ -37,17 +37,20 @@ docpadConfig = {
 			author: "Mikeumus"
 
 			# The website author's email
-			email: "mikeumus@gmail.com"
+			email: "mikeumus@protonmail.ch"
 
 			# Styles
 			styles: [
 				"//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css"
+				"//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css"
 				"/styles/style.css"
+          
 			]
 
 			# Scripts
 			scripts: [
-				"//cdnjs.cloudflare.com/ajax/libs/yui/3.18.0/yui/yui-min.js"
+				"//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"
+				"//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"
 				"/scripts/script.js"
 			]
 
@@ -88,6 +91,9 @@ docpadConfig = {
 
 		posts: (database) ->
 			database.findAllLive({tags:$has:'post'}, [date:-1])
+			
+		archive: (database) ->
+			database.findAllLive({tags:$has:'archive'}, [date:-1])
 
 	# =================================
 	# DocPad Events

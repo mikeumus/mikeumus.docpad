@@ -2,10 +2,11 @@ body {
     color: #333;
     margin: 56px auto 0;
     line-height: 1.7em;
+    height:155vh;
     background: url(https://googledrive.com/host/0B9LVk4xbDIJTU0FvQll6RWlCNnM/subtle_white_feathers.png);
 }
 
-a{color:#FF9900;text-decoration: none}
+nav a, a{color:#FF9900;text-decoration: none}
 
 ::-moz-selection{background:#5af;color:#fff;text-shadow:none}
 ::selection{background:#5af;color:#fff;text-shadow:none}
@@ -126,6 +127,7 @@ body .primary-button {
         color: #999;
         width: 698px;
         font-weight: 300;
+        font-size: 22.5px;
         text-align: right;
         line-height: 42px;
         letter-spacing: 2px;
@@ -137,6 +139,9 @@ body .primary-button {
     .splash-image{
         opacity: 0.9;
     }
+        .splash-image img{
+            width: 100%;
+        }
 
 .content{letter-spacing: 0 !important;}
 .content .content-subhead {
