@@ -2,11 +2,11 @@ body {
     color: #333;
     margin: 56px auto 0;
     line-height: 1.7em;
-    height:155vh;
+    /*height:155vh;*/
     background: url(https://googledrive.com/host/0B9LVk4xbDIJTU0FvQll6RWlCNnM/subtle_white_feathers.png);
 }
 
-nav a, a{color:#FF9900;text-decoration: none}
+nav a, a, .linklist a{color:#FF9900;text-decoration: none}
 
 ::-moz-selection{background:#5af;color:#fff;text-shadow:none}
 ::selection{background:#5af;color:#fff;text-shadow:none}
@@ -18,14 +18,18 @@ nav a, a{color:#FF9900;text-decoration: none}
 .post{min-height: 377px;margin: 33px;padding-top: 33px;}
     .post-content{margin: 33px;}
 
-.linklist li{
-    background: #FFFEF5;
-    padding: 21px;
-    margin: 7px 0;
-    list-style: none;
-    border: 1px solid rgb(250, 255, 187);
-    box-shadow: 1px 3px 33px rgba(198, 202, 145, 0.33);
+.linklist{
+    background: rgba(162, 160, 132, 0.29);
 }
+    .linklist li{
+        background: #FFFEF5;
+        padding: 21px;
+        margin: 7px 0;
+        list-style: none;
+        border: 1px solid rgb(250, 255, 187);
+        border-radius: 3px;
+        box-shadow: 1px 3px 33px rgba(198, 202, 145, 0.33);
+    }
 
 .lightbulb-home{
     height:36px;width:36px;position:absolute;fill:orange;
@@ -127,7 +131,7 @@ body .primary-button {
         color: #999;
         width: 698px;
         font-weight: 300;
-        font-size: 22.5px;
+        font-size: 25px;
         text-align: right;
         line-height: 42px;
         letter-spacing: 2px;
