@@ -6,6 +6,18 @@ body {
     background: url(https://googledrive.com/host/0B9LVk4xbDIJTU0FvQll6RWlCNnM/subtle_white_feathers.png);
 }
 
+i.material-icons{
+    background: rgb(251, 245, 193);
+    border-radius: 50px;
+    padding: 7px;
+    font-size: 15px;
+    color: #C19040;
+}
+
+.white-bg{
+    background: white;
+}
+
 nav a, a, .linklist a{color:#FF9900;text-decoration: none}
 
 ::-moz-selection{background:#5af;color:#fff;text-shadow:none}
@@ -14,6 +26,13 @@ nav a, a, .linklist a{color:#FF9900;text-decoration: none}
 ::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.2)}
 ::-webkit-scrollbar-thumb{background:rgba(102,51,0,0.2) url(https://googledrive.com/host/0B9LVk4xbDIJTU0FvQll6RWlCNnM/ticks.png);-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.2)}
 ::-webkit-scrollbar-thumb:window-inactive{background:rgba(216,210,206,0.3)}
+
+code{
+    background: #737373;
+    color: #D6FF00;
+    padding: 1px 3px;
+    border: 1px groove;
+}
 
 .post{min-height: 377px;margin: 33px;padding-top: 33px;}
     .post-content{margin: 33px;}
@@ -107,7 +126,6 @@ body .primary-button {
 
 .splash {
     margin:0 auto;
-    padding: 1.7em 0em 0.7em 1em;
     background: #E5E9E8;
     box-shadow: 1px 7px 117px rgba(101, 107, 106, 0.47);
     border-bottom: 1px solid #EBEEED;
@@ -215,11 +233,14 @@ footer{margin: 33px;}
     }
 
 @media screen and (max-width: 640px){
-    .splash .splash-subhead{
-        font-weight: 300;
-        font-size: 11px;
-        line-height: 15px;
+    .splash{
+        padding: 1.3em 0 1em 0;
     }
+        .splash .splash-subhead{
+            font-weight: 300;
+            font-size: 11px;
+            line-height: 15px;
+        }
         .splash .pure-u-2-5{
             width: 65%;
         }

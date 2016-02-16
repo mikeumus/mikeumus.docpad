@@ -32,7 +32,9 @@ title: 'Home'
             <div class="pure-u-1">
                 <div class="linklist">
                     <% for document in @getCollection('posts').toJSON(): %>
-                        <li><a class="home-post-title" href="<%= document.url %>">
+                        <li>
+                            <%- document.icon %>
+                            <a class="home-post-title" href="<%= document.url %>">
                         <%= document.title %> </a>
                         <!-- &raquo; <span>Updated <%= document.date.toDateString() %></span> -->
                         <a href="<%= document.url %>" class="pure-button">READ</a>

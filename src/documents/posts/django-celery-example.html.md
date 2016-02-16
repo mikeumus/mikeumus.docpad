@@ -1,6 +1,7 @@
 ```
 title: Django-Celery Example [Dev Entry Feb 15th 2016]
 layout: post
+icon: '<i class="material-icons">&#xE86F;</i>'
 tags: ['post', 'django', 'celery', 'example']
 ```
 
@@ -16,7 +17,6 @@ i{
     font-size: 11px !important;
 }
 </style>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <i class="material-icons">&#xE86F;</i> Code on GitHub: https://github.com/mikeumus/django-celery-example
 

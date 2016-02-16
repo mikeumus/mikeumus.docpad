@@ -21,13 +21,6 @@
 	<!-- Output DocPad produced meta elements -->
 	<%- @getBlock('meta').toHTML() %>
 
-	<!-- Icons -->
-    <link rel="shortcut icon" href="icons/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icons/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="icons/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="icons/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="icons/apple-touch-icon-57-precomposed.png">
-
 	<!-- Shims: IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
 		<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -52,7 +45,7 @@
 				<ul>
 					<% for document in @getCollection('pages').toJSON(): %>
 						<li typeof="sioc:Page" about="<%= document.url %>" class="<%= 'active'  if @document.url is document.url %>">
-							<a href="<%= document.url %>" property="dc:title">Resume</a>
+							<a class="pure-button white-bg" href="<%= document.url %>" property="dc:title">Resume</a>
 						</li>
 					<% end %>
 				</ul>
