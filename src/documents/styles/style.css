@@ -54,7 +54,7 @@ nav a, a, .linklist a{color:#FF9900;text-decoration: none}
 }
 
 .main{
-    padding: 33px 0;
+    padding: 33px 3em;
 }
     .main-inner{
         padding: 0 13px;
@@ -64,8 +64,7 @@ nav a, a, .linklist a{color:#FF9900;text-decoration: none}
     margin: 0 0;
 }
     .header .pure-menu {
-        padding: 0.5em;
-        opacity: 0.7;
+        padding: 0.5em 2em 0.5em 3.1em;
         background: url(https://googledrive.com/host/0B9LVk4xbDIJTU0FvQll6RWlCNnM/ticks.png);
     }
     .pure-menu.pure-menu-open{
@@ -74,9 +73,6 @@ nav a, a, .linklist a{color:#FF9900;text-decoration: none}
     .pure-menu-heading{
         float: left;
         margin: 0.5em 0;
-    }
-    .header .pure-menu:hover{
-        opacity: 1;
     }
         .header .pure-menu li a:hover,
         .header .pure-menu li a:focus {
@@ -111,7 +107,7 @@ body .primary-button {
 
 .splash {
     margin:0 auto;
-    padding: 1.7em 0.5em 0.7em;
+    padding: 1.7em 0em 0.7em 1em;
     background: #E5E9E8;
     box-shadow: 1px 7px 117px rgba(101, 107, 106, 0.47);
     border-bottom: 1px solid #EBEEED;
@@ -131,8 +127,7 @@ body .primary-button {
         color: #999;
         width: 698px;
         font-weight: 300;
-        font-size: 25px;
-        text-align: right;
+        font-size: 22px;
         line-height: 42px;
         letter-spacing: 2px;
     }
@@ -158,7 +153,7 @@ body .primary-button {
 }
 
 .content .content-ribbon {
-    margin: 3em;
+    margin: 3em 0;
 }
 
 .home-post-title{
@@ -169,6 +164,9 @@ body .primary-button {
     float: right;
     margin: 11px 45px -10px 0;
 }
+    .pure-menu-horizontal li{
+        list-style: none;
+    }
 
 .iconmonstr-home-posts{
     fill:orange;
@@ -200,13 +198,14 @@ body .primary-button {
 footer{margin: 33px;}
     .footer {
         background: #555 url(https://googledrive.com/host/0B9LVk4xbDIJTU0FvQll6RWlCNnM/cartographer.png);
-        color: #666;
+        color: #B3B3B3;
         text-align: center;
         padding: 1em;
         font-size: 80%;
         position: fixed;
         width: 100%;
         bottom: 0;
+        left: 0;
     }
     .os{
         height: 23px;
@@ -214,6 +213,26 @@ footer{margin: 33px;}
         fill: #777;
         position: absolute;
     }
+
+@media screen and (max-width: 640px){
+    .splash .splash-subhead{
+        font-weight: 300;
+        font-size: 11px;
+        line-height: 15px;
+    }
+        .splash .pure-u-2-5{
+            width: 65%;
+        }
+            .splash .pure-u-2-5 .l-box.splash-text{
+                padding: 0 1em;
+            }
+        .l-box.splash-image{
+            padding: 0;
+        }
+        .splash .splash-head{
+            font-size: 16px;
+        }
+}
 
 @media screen and (max-width: 1150px) {
     .splash .splash-subhead{

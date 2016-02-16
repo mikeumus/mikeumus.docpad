@@ -13,6 +13,9 @@ docpadConfig = {
 		site:
 			# The production url of our website
 			url: "http://mikeum.us"
+			
+			services:
+				disqus: '4463093'
 
 			# Here are some old site urls that you would like to redirect from
 			oldUrls: [
@@ -42,15 +45,13 @@ docpadConfig = {
 			# Styles
 			styles: [
 				"//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css"
-				"//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css"
 				"/styles/style.css"
-          
+		  
 			]
 
 			# Scripts
 			scripts: [
 				"//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"
-				"//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"
 				"/scripts/script.js"
 			]
 
