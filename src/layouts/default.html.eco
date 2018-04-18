@@ -51,8 +51,8 @@
 				<a href="/"><span class="pure-menu-heading">Mikeumus</span></a>
 				<ul>
 					<% for document in @getCollection('pages').toJSON(): %>
-						<li typeof="sioc:Page" about=".<%= document.url %>" class="<%= 'active' if @document.url is document.url %>">
-							<a class="pure-button white-bg" href=".<%= document.url %>.html" property="dc:title">Resume</a>
+						<li typeof="sioc:Page" about="<%= document.url %>" class="<%= 'active' if @document.url is document.url %>">
+							<a class="pure-button white-bg" href="http://mikeumus.github.io/mikeum.us.docpad<%= document.url %>.html" property="dc:title">Resume</a>
 						</li>
 					<% end %>
 				</ul>
@@ -64,7 +64,7 @@
 	</div>
 	<!-- <a href="pages/achive">Blog Archive</a> -->
 	<div class="footer pure-u-1">
-		Mikeum.us is <a href="https://github.com/mikeumus/mikeum.us" target="_blank">open-source on Github</a>, hosted via <a href="https://pages.github.com/">Github Pages</a>. Powered by <a href="http://docpad.org/">DocPad</a>. Built with <a href="https://purecss.io/">PureCSS</a>.
+		Mikeum.us is <a href="https://github.com/mikeumus/mikeumus.docpad" target="_blank">open-source on Github</a>, hosted via <a href="https://pages.github.com/">Github Pages</a>. Powered by <a href="http://docpad.org/">DocPad</a>. Built with <a href="https://purecss.io/">PureCSS</a>.
 		</a>
 		<br/>
 		&copy; Mikeumus <%- (new Date()).getFullYear() %>.
