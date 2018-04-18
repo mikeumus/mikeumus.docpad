@@ -52,7 +52,7 @@
 				<ul>
 					<% for document in @getCollection('pages').toJSON(): %>
 						<li typeof="sioc:Page" about="<%= document.url %>" class="<%= 'active' if @document.url is document.url %>">
-							<a class="pure-button white-bg" href="http://mikeumus.github.io/mikeum.us.docpad<%= document.url %>.html" property="dc:title">Resume</a>
+							<a class="pure-button white-bg" href="http://mikeumus.github.io/mikeumus.docpad<%= document.url %>.html" property="dc:title">Resume</a>
 						</li>
 					<% end %>
 				</ul>
