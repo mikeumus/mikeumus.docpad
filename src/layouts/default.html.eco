@@ -51,8 +51,8 @@
 				<a href="/"><span class="pure-menu-heading">Mikeum.us</span></a>
 				<ul>
 					<% for document in @getCollection('pages').toJSON(): %>
-						<li typeof="sioc:Page" about="<%= document.url %>" class="<%= 'active'  if @document.url is document.url %>">
-							<a class="pure-button white-bg" href="<%= document.url %>" property="dc:title">Resume</a>
+						<li typeof="sioc:Page" about="./<%= document.url %>" class="<%= 'active'  if @document.url is document.url %>">
+							<a class="pure-button white-bg" href="./<%= document.url %>" property="dc:title">Resume</a>
 						</li>
 					<% end %>
 				</ul>
