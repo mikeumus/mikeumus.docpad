@@ -11,7 +11,6 @@ title: 'Home'
                          alt="Mikeumus suit up">
                 </div>
             </div>
-
             <div class="pure-u-2-5">
                 <div class="l-box splash-text">
                     <h1 class="splash-head">
@@ -26,7 +25,6 @@ title: 'Home'
             </div>
         </div>
     </div>
-
     <div class="content pure-u-1">
         <div class="pure-g-r content-ribbon">
             <div class="pure-u-1">
