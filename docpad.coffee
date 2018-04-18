@@ -24,7 +24,7 @@ docpadConfig = {
 			]
 
 			# The default title of our website
-			title: "Mikeum.us"
+			title: "Mikeumus"
 
 			# The website description (for SEO)
 			description: """
@@ -40,7 +40,7 @@ docpadConfig = {
 			author: "Mikeumus"
 
 			# The website author's email
-			email: "mikeumus@protonmail.ch"
+			email: "mikeumus@protonmail.com"
 
 			# Styles
 			styles: [
