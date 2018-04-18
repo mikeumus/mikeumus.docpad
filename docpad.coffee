@@ -12,7 +12,7 @@ docpadConfig = {
 		# Specify some site properties
 		site:
 			# The production url of our website
-			url: "http://mikeum.us"
+			url: "http://mikeumus.github.io/mikeum.us.docpad"
 			
 			services:
 				disqus: '4463093'
