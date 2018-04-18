@@ -60,7 +60,6 @@
 		</div>
 
 		<%- @content %>
-	
 
 	</div>
 	<!-- <a href="pages/achive">Blog Archive</a> -->
@@ -69,10 +68,9 @@
 		</a>
 		<br/>
 		&copy; Mikeumus <%- (new Date()).getFullYear() %>.
-		last updated at <%= @site.date.toISOString() %> _
+		last updated at <%= @site.date.toISOString() %>
 	</div>
 </div>
-
 	<!-- Scripts -->
 	<%- @getBlock('scripts').add(@site.scripts).toHTML() %>
 </body>
