@@ -46,13 +46,11 @@ docpadConfig = {
 			styles: [
 				"//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css"
 				"https://fonts.googleapis.com/icon?family=Material+Icons"
-				"/styles/style.css"
+				"styles/style.css"
 			]
 
 			# Scripts
-			scripts: [
-
-			]
+			scripts: []
 
 
 
