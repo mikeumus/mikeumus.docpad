@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Meta -->
+	<meta charset="utf-8" />
+
+	<!-- Mobile viewport optimized: h5bp.com/viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#fcfcfc">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#fcfcfc">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#fcfcfc">
+
+	<!-- Use the .htaccess and remove these lines to avoid edge case issues.
+	   More info: h5bp.com/i/378 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<!-- Our site title and description -->
+	<title>Django-Celery Example [Dev Entry Feb 15th 2016] | Mikeumus</title>
+	<meta name="description" content="Mikeumus' blog." />
+	<meta name="keywords" content="michaelduanemooring, michael duane mooring, michael mooring, mikeumus" />
+	<meta name="author" content="Mikeumus" />
+
+	<!-- Output DocPad produced meta elements -->
+	<meta name="generator" content="DocPad v6.78.4" />
+
+	<!-- Shims: IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+		<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link  rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css" /><link  rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" /><link  rel="stylesheet" href="styles/style.css" />
+
+	<!-- Typekit ajf8ggy.js -->
+	<script>
+    try { Typekit.load(); } catch (e) {}
+	</script>
+</head>
+<body>
+
+<!-- Markup -->
+<div class="content main pure-g-r">
+	<div class="main-inner">
+		<div class="header pure-u-1">
+			<div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
+				<a href="/"><span class="pure-menu-heading">Mikeumus</span></a>
+				<ul>
+					
+						<li typeof="sioc:Page" about="/pages/resume" class="">
+							<a class="pure-button white-bg" href="http://mikeumus.github.io/mikeumus.docpad/pages/resume.html" property="dc:title">Resume</a>
+						</li>
+					
+				</ul>
+			</div>
+		</div>
+
+		<article id="post" class="post">
+	<h1>Django-Celery Example [Dev Entry Feb 15th 2016]</h1>
+	<div class="post-content"><style> 
+
+h1{font-size: 2rem !important;}
+article{height: 2511px;}
+i{
+    background: grey;
+    border-radius: 50px;
+    color: white;
+    padding: 3px;
+    font-size: 11px !important;
+}
+</style>
+
+<p><i class="material-icons">&#xE86F;</i> Code on GitHub: <a href="https://github.com/mikeumus/django-celery-example">https://github.com/mikeumus/django-celery-example</a></p>
+<p><img src="https://0839a63ecb79fafd04ced14c58bd0806808b39ce.googledrive.com/host/0B9LVk4xbDIJTYmZXS2p3RVo0OXM" alt="django admin with django-celery tasks dashboard" width="100%;"></p>
+<hr>
+<h4 id="get-django-celery-working-">Get Django-Celery Working!</h4>
+<ol>
+<li>Install <a href="https://www.python.org/downloads/">Python</a> (if you&#39;re in linux, python 2.7 is already installed), <a href="https://pip.pypa.io/en/latest/installing.html">pip</a>, <a href="https://docs.djangoproject.com/en/1.8/topics/install/">django</a> (and run <code>./manage.py syncdb</code>), <a href="http://www.celeryproject.org/install/">celery</a>, and django-celery</li>
+<li>Choose your celery broker and install that: <a href="http://celery.readthedocs.org/en/latest/getting-started/brokers/rabbitmq.html">RabbitMQ</a>, <a href="http://celery.readthedocs.org/en/latest/getting-started/brokers/redis.html">Redis</a>, <a href="http://celery.readthedocs.org/en/latest/getting-started/brokers/">others...</a></li>
+<li>Setup django-celery part 1: <a href="http://docs.celeryproject.org/en/latest/django/first-steps-with-django.html#using-the-django-orm-cache-as-a-result-backend">http://docs.celeryproject.org/en/latest/django/first-steps-with-django.html#using-the-django-orm-cache-as-a-result-backend</a></li>
+<li>Setup django-celery part 2: <a href="https://github.com/celery/django-celery/blob/master/README.rst#using-django-celery">https://github.com/celery/django-celery/blob/master/README.rst#using-django-celery</a></li>
+<li>Start all the things (processes):</li>
+<li>Start your <code>redis-server</code> or <code>rabbitmq-server</code>, ect...</li>
+<li>Start Django: <code>./manage.py runserver</code> (and <code>./manage.py runserver $IP:$PORT</code> in Cloud 9)</li>
+<li>Start the Celery Event Camera via: <code>./manage.py celery events --camera=djcelery.snapshot.Camera</code> </li>
+<li>Start <code>celeryd</code> with celery beat (<code>-B</code>): <code>./manage.py celeryd -B -l INFO</code>  </li>
+<li>Run a task:</li>
+<li><code>./manage.py shell</code></li>
+<li><code>from demoapp.tasks import add</code></li>
+<li><code>add.delay(2,2)</code></li>
+<li>and you should then see things happening in the Celery Beat process and in the <a href="https://docs.djangoproject.com/en/1.8/ref/contrib/admin/">Django Admin</a></li>
+</ol>
+<p>Lots of steps involved and that&#39;s why I put together this project to provide an isolated example of using django-celery that worked for me.
+The less steps it takes, the more likely you are to get it running sooner. Cheers!  </p>
+<hr>
+<h3 id="code-playground-at-c9">Code Playground at C9</h3>
+<p><a href="https://ide.c9.io/mikeumus/celery-django-example">https://ide.c9.io/mikeumus/celery-django-example</a></p>
+<h5 id="celery-processes-notes">Celery Processes Notes</h5>
+<ul>
+<li>Starting tasks in the background with <code>celery multi</code>: <a href="http://docs.celeryproject.org/en/master/getting-started/next-steps.html?highlight=multi#in-the-background">http://docs.celeryproject.org/en/master/getting-started/next-steps.html?highlight=multi#in-the-background</a><ul>
+<li><code>./manage.py celery multi start w1 -A proj -l info</code></li>
+<li>Starting a process locally in the terminal: <code>./manage.py celery -A proj worker -l info</code></li>
+<li>Starting event camera: <code>./manage.py celery events --camera=djcelery.snapshot.Camera</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<pre><code> ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
+&#39;  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---&#39;
+|  |    |  || .-. ||  ||  |&#39; .-. |`..&#39;  |  |  ||  |  \  :|  `--, 
+&#39;  &#39;--&#39;\|  |&#39; &#39;-&#39; &#39;&#39;  &#39;&#39;  &#39;\ `-&#39; | .&#39;  /   |  ||  &#39;--&#39;  /|  `---.
+ `-----&#39;`--&#39; `---&#39;  `----&#39;  `---&#39;  `--&#39;    `--&#39;`-------&#39; `------&#39;
+----------------------------------------------------------------- 
+</code></pre><p>Welcome to your Django project on Cloud9 IDE!</p>
+<p>Your Django project is already fully setup. Just click the &quot;Run&quot; button to start
+the application. On first run you will be asked to create an admin user. You can
+access your application from &#39;<a href="https://celery-django-example-mikeumus.c9.io/">https://celery-django-example-mikeumus.c9.io/</a>&#39; and the admin page from 
+&#39;<a href="https://celery-django-example-mikeumus.c9.io/admin">https://celery-django-example-mikeumus.c9.io/admin</a>&#39;.</p>
+<h2 id="starting-from-the-terminal">Starting from the Terminal</h2>
+<p>In case you want to run your Django application from the terminal just run:</p>
+<p>1) Run syncdb command to sync models to database and create Django&#39;s default superuser and auth system</p>
+<pre><code>$ python manage.py syncdb
+</code></pre><p>2) Run Django</p>
+<pre><code>$ python manage.py runserver $IP:$PORT
+</code></pre><h2 id="support-documentation">Support &amp; Documentation</h2>
+<p>Django docs can be found at <a href="https://www.djangoproject.com/">https://www.djangoproject.com/</a></p>
+<p>You may also want to follow the Django tutorial to create your first application:
+<a href="https://docs.djangoproject.com/en/1.7/intro/tutorial01/">https://docs.djangoproject.com/en/1.7/intro/tutorial01/</a></p>
+<p>Visit <a href="http://docs.c9.io">http://docs.c9.io</a> for support, or to learn more about using Cloud9 IDE.
+To watch some training videos, visit <a href="http://www.youtube.com/user/c9ide">http://www.youtube.com/user/c9ide</a></p>
+</div>
+</article>
+
+<div>
+	<div id="disqus_thread"></div>
+<script>
+	(function(){
+		window.disqus_shortname = '4463093';
+		window.disqus_developer = '1';
+		window.disqus_url = 'http://mikeumus.github.io/mikeumus.docpad/posts/django-celery-example';
+		window.disqus_identifier = 'posts-django-celery-example';
+		window.disqus_title = 'Django-Celery Example [Dev Entry Feb 15th 2016]';
+		if ( window.DISQUS ) {
+			return DISQUS.reset({
+				reload: true,
+				config: function () {
+					this.page.identifier = window.disqus_identifier;
+					this.page.url = window.disqus_url;
+					this.page.title = window.disqus_title;
+				}
+			});
+		}
+		else {
+		  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		}
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<footer>
+	
+</footer>
+
+	</div>
+	<!-- <a href="pages/achive">Blog Archive</a> -->
+	<div class="footer pure-u-1">
+		Mikeum.us is <a href="https://github.com/mikeumus/mikeumus.docpad" target="_blank">open-source on Github</a>, hosted via <a href="https://pages.github.com/">Github Pages</a>. Powered by <a href="http://docpad.org/">DocPad</a>. Built with <a href="https://purecss.io/">PureCSS</a>.
+		</a>
+		<br/>
+		&copy; Mikeumus 2018.
+		last updated at 2018-04-18T08:26:36.747Z
+	</div>
+</div>
+	<!-- Scripts -->
+	
+</body>
+</html>

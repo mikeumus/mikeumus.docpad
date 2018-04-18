@@ -1,0 +1,1034 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>Mikeumus</title>
+	<link href="http://mikeumus.github.io/mikeumus.docpad/atom.xml" rel="self"/>
+	<link href="http://mikeumus.github.io/mikeumus.docpad"/>
+	<updated>2018-04-18T08:26:36.747Z</updated>
+	<id>http://mikeumus.github.io/mikeumus.docpad</id>
+	<author>
+		<name>Mikeumus</name>
+		<email>mikeumus@protonmail.com</email>
+	</author>
+
+	
+		<entry>
+			<title>Django-Celery Example [Dev Entry Feb 15th 2016]</title>
+			<link href="http://mikeumus.github.io/mikeumus.docpad//posts/django-celery-example"/>
+			<updated>2016-02-16T05:53:52.000Z</updated>
+			<id>http://mikeumus.github.io/mikeumus.docpad//posts/django-celery-example</id>
+			<content type="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+	&lt;!-- Meta --&gt;
+	&lt;meta charset=&quot;utf-8&quot; /&gt;
+
+	&lt;!-- Mobile viewport optimized: h5bp.com/viewport --&gt;
+	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+	&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+	
+	&lt;!-- Chrome, Firefox OS and Opera --&gt;
+	&lt;meta name=&quot;theme-color&quot; content=&quot;#fcfcfc&quot;&gt;
+	&lt;!-- Windows Phone --&gt;
+	&lt;meta name=&quot;msapplication-navbutton-color&quot; content=&quot;#fcfcfc&quot;&gt;
+	&lt;!-- iOS Safari --&gt;
+	&lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;#fcfcfc&quot;&gt;
+
+	&lt;!-- Use the .htaccess and remove these lines to avoid edge case issues.
+	   More info: h5bp.com/i/378 --&gt;
+	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;
+
+	&lt;!-- Our site title and description --&gt;
+	&lt;title&gt;Django-Celery Example [Dev Entry Feb 15th 2016] | Mikeumus&lt;/title&gt;
+	&lt;meta name=&quot;description&quot; content=&quot;Mikeumus' blog.&quot; /&gt;
+	&lt;meta name=&quot;keywords&quot; content=&quot;michaelduanemooring, michael duane mooring, michael mooring, mikeumus&quot; /&gt;
+	&lt;meta name=&quot;author&quot; content=&quot;Mikeumus&quot; /&gt;
+
+	&lt;!-- Output DocPad produced meta elements --&gt;
+	&lt;meta name=&quot;generator&quot; content=&quot;DocPad v6.78.4&quot; /&gt;
+
+	&lt;!-- Shims: IE6-8 support of HTML5 elements --&gt;
+	&lt;!--[if lt IE 9]&gt;
+		&lt;script async src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
+	&lt;![endif]--&gt;
+
+	&lt;!-- Styles --&gt;
+	&lt;link  rel=&quot;stylesheet&quot; href=&quot;//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css&quot; /&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot; /&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;styles/style.css&quot; /&gt;
+
+	&lt;!-- Typekit ajf8ggy.js --&gt;
+	&lt;script&gt;
+    try { Typekit.load(); } catch (e) {}
+	&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;!-- Markup --&gt;
+&lt;div class=&quot;content main pure-g-r&quot;&gt;
+	&lt;div class=&quot;main-inner&quot;&gt;
+		&lt;div class=&quot;header pure-u-1&quot;&gt;
+			&lt;div class=&quot;pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal&quot;&gt;
+				&lt;a href=&quot;/&quot;&gt;&lt;span class=&quot;pure-menu-heading&quot;&gt;Mikeumus&lt;/span&gt;&lt;/a&gt;
+				&lt;ul&gt;
+					
+						&lt;li typeof=&quot;sioc:Page&quot; about=&quot;/pages/resume&quot; class=&quot;&quot;&gt;
+							&lt;a class=&quot;pure-button white-bg&quot; href=&quot;http://mikeumus.github.io/mikeumus.docpad/pages/resume.html&quot; property=&quot;dc:title&quot;&gt;Resume&lt;/a&gt;
+						&lt;/li&gt;
+					
+				&lt;/ul&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;article id=&quot;post&quot; class=&quot;post&quot;&gt;
+	&lt;h1&gt;Django-Celery Example [Dev Entry Feb 15th 2016]&lt;/h1&gt;
+	&lt;div class=&quot;post-content&quot;&gt;&lt;style&gt; 
+
+h1{font-size: 2rem !important;}
+article{height: 2511px;}
+i{
+    background: grey;
+    border-radius: 50px;
+    color: white;
+    padding: 3px;
+    font-size: 11px !important;
+}
+&lt;/style&gt;
+
+&lt;p&gt;&lt;i class=&quot;material-icons&quot;&gt;&amp;#xE86F;&lt;/i&gt; Code on GitHub: &lt;a href=&quot;https://github.com/mikeumus/django-celery-example&quot;&gt;https://github.com/mikeumus/django-celery-example&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://0839a63ecb79fafd04ced14c58bd0806808b39ce.googledrive.com/host/0B9LVk4xbDIJTYmZXS2p3RVo0OXM&quot; alt=&quot;django admin with django-celery tasks dashboard&quot; width=&quot;100%;&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&quot;get-django-celery-working-&quot;&gt;Get Django-Celery Working!&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Install &lt;a href=&quot;https://www.python.org/downloads/&quot;&gt;Python&lt;/a&gt; (if you&amp;#39;re in linux, python 2.7 is already installed), &lt;a href=&quot;https://pip.pypa.io/en/latest/installing.html&quot;&gt;pip&lt;/a&gt;, &lt;a href=&quot;https://docs.djangoproject.com/en/1.8/topics/install/&quot;&gt;django&lt;/a&gt; (and run &lt;code&gt;./manage.py syncdb&lt;/code&gt;), &lt;a href=&quot;http://www.celeryproject.org/install/&quot;&gt;celery&lt;/a&gt;, and django-celery&lt;/li&gt;
+&lt;li&gt;Choose your celery broker and install that: &lt;a href=&quot;http://celery.readthedocs.org/en/latest/getting-started/brokers/rabbitmq.html&quot;&gt;RabbitMQ&lt;/a&gt;, &lt;a href=&quot;http://celery.readthedocs.org/en/latest/getting-started/brokers/redis.html&quot;&gt;Redis&lt;/a&gt;, &lt;a href=&quot;http://celery.readthedocs.org/en/latest/getting-started/brokers/&quot;&gt;others...&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Setup django-celery part 1: &lt;a href=&quot;http://docs.celeryproject.org/en/latest/django/first-steps-with-django.html#using-the-django-orm-cache-as-a-result-backend&quot;&gt;http://docs.celeryproject.org/en/latest/django/first-steps-with-django.html#using-the-django-orm-cache-as-a-result-backend&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Setup django-celery part 2: &lt;a href=&quot;https://github.com/celery/django-celery/blob/master/README.rst#using-django-celery&quot;&gt;https://github.com/celery/django-celery/blob/master/README.rst#using-django-celery&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Start all the things (processes):&lt;/li&gt;
+&lt;li&gt;Start your &lt;code&gt;redis-server&lt;/code&gt; or &lt;code&gt;rabbitmq-server&lt;/code&gt;, ect...&lt;/li&gt;
+&lt;li&gt;Start Django: &lt;code&gt;./manage.py runserver&lt;/code&gt; (and &lt;code&gt;./manage.py runserver $IP:$PORT&lt;/code&gt; in Cloud 9)&lt;/li&gt;
+&lt;li&gt;Start the Celery Event Camera via: &lt;code&gt;./manage.py celery events --camera=djcelery.snapshot.Camera&lt;/code&gt; &lt;/li&gt;
+&lt;li&gt;Start &lt;code&gt;celeryd&lt;/code&gt; with celery beat (&lt;code&gt;-B&lt;/code&gt;): &lt;code&gt;./manage.py celeryd -B -l INFO&lt;/code&gt;  &lt;/li&gt;
+&lt;li&gt;Run a task:&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;./manage.py shell&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;from demoapp.tasks import add&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;add.delay(2,2)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;and you should then see things happening in the Celery Beat process and in the &lt;a href=&quot;https://docs.djangoproject.com/en/1.8/ref/contrib/admin/&quot;&gt;Django Admin&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Lots of steps involved and that&amp;#39;s why I put together this project to provide an isolated example of using django-celery that worked for me.
+The less steps it takes, the more likely you are to get it running sooner. Cheers!  &lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;code-playground-at-c9&quot;&gt;Code Playground at C9&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://ide.c9.io/mikeumus/celery-django-example&quot;&gt;https://ide.c9.io/mikeumus/celery-django-example&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&quot;celery-processes-notes&quot;&gt;Celery Processes Notes&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;Starting tasks in the background with &lt;code&gt;celery multi&lt;/code&gt;: &lt;a href=&quot;http://docs.celeryproject.org/en/master/getting-started/next-steps.html?highlight=multi#in-the-background&quot;&gt;http://docs.celeryproject.org/en/master/getting-started/next-steps.html?highlight=multi#in-the-background&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;./manage.py celery multi start w1 -A proj -l info&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Starting a process locally in the terminal: &lt;code&gt;./manage.py celery -A proj worker -l info&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Starting event camera: &lt;code&gt;./manage.py celery events --camera=djcelery.snapshot.Camera&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;pre&gt;&lt;code&gt; ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
+&amp;#39;  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---&amp;#39;
+|  |    |  || .-. ||  ||  |&amp;#39; .-. |`..&amp;#39;  |  |  ||  |  \  :|  `--, 
+&amp;#39;  &amp;#39;--&amp;#39;\|  |&amp;#39; &amp;#39;-&amp;#39; &amp;#39;&amp;#39;  &amp;#39;&amp;#39;  &amp;#39;\ `-&amp;#39; | .&amp;#39;  /   |  ||  &amp;#39;--&amp;#39;  /|  `---.
+ `-----&amp;#39;`--&amp;#39; `---&amp;#39;  `----&amp;#39;  `---&amp;#39;  `--&amp;#39;    `--&amp;#39;`-------&amp;#39; `------&amp;#39;
+----------------------------------------------------------------- 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Welcome to your Django project on Cloud9 IDE!&lt;/p&gt;
+&lt;p&gt;Your Django project is already fully setup. Just click the &amp;quot;Run&amp;quot; button to start
+the application. On first run you will be asked to create an admin user. You can
+access your application from &amp;#39;&lt;a href=&quot;https://celery-django-example-mikeumus.c9.io/&quot;&gt;https://celery-django-example-mikeumus.c9.io/&lt;/a&gt;&amp;#39; and the admin page from 
+&amp;#39;&lt;a href=&quot;https://celery-django-example-mikeumus.c9.io/admin&quot;&gt;https://celery-django-example-mikeumus.c9.io/admin&lt;/a&gt;&amp;#39;.&lt;/p&gt;
+&lt;h2 id=&quot;starting-from-the-terminal&quot;&gt;Starting from the Terminal&lt;/h2&gt;
+&lt;p&gt;In case you want to run your Django application from the terminal just run:&lt;/p&gt;
+&lt;p&gt;1) Run syncdb command to sync models to database and create Django&amp;#39;s default superuser and auth system&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ python manage.py syncdb
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;2) Run Django&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ python manage.py runserver $IP:$PORT
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;support-documentation&quot;&gt;Support &amp;amp; Documentation&lt;/h2&gt;
+&lt;p&gt;Django docs can be found at &lt;a href=&quot;https://www.djangoproject.com/&quot;&gt;https://www.djangoproject.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You may also want to follow the Django tutorial to create your first application:
+&lt;a href=&quot;https://docs.djangoproject.com/en/1.7/intro/tutorial01/&quot;&gt;https://docs.djangoproject.com/en/1.7/intro/tutorial01/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Visit &lt;a href=&quot;http://docs.c9.io&quot;&gt;http://docs.c9.io&lt;/a&gt; for support, or to learn more about using Cloud9 IDE.
+To watch some training videos, visit &lt;a href=&quot;http://www.youtube.com/user/c9ide&quot;&gt;http://www.youtube.com/user/c9ide&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/article&gt;
+
+&lt;div&gt;
+	&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+	(function(){
+		window.disqus_shortname = '4463093';
+		window.disqus_developer = '1';
+		window.disqus_url = 'http://mikeumus.github.io/mikeumus.docpad/posts/django-celery-example';
+		window.disqus_identifier = 'posts-django-celery-example';
+		window.disqus_title = 'Django-Celery Example [Dev Entry Feb 15th 2016]';
+		if ( window.DISQUS ) {
+			return DISQUS.reset({
+				reload: true,
+				config: function () {
+					this.page.identifier = window.disqus_identifier;
+					this.page.url = window.disqus_url;
+					this.page.title = window.disqus_title;
+				}
+			});
+		}
+		else {
+		  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		}
+	})();
+&lt;/script&gt;
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;http://disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+&lt;a href=&quot;http://disqus.com&quot; class=&quot;dsq-brlink&quot;&gt;comments powered by &lt;span class=&quot;logo-disqus&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;footer&gt;
+	
+&lt;/footer&gt;
+
+	&lt;/div&gt;
+	&lt;!-- &lt;a href=&quot;pages/achive&quot;&gt;Blog Archive&lt;/a&gt; --&gt;
+	&lt;div class=&quot;footer pure-u-1&quot;&gt;
+		Mikeum.us is &lt;a href=&quot;https://github.com/mikeumus/mikeumus.docpad&quot; target=&quot;_blank&quot;&gt;open-source on Github&lt;/a&gt;, hosted via &lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt;. Powered by &lt;a href=&quot;http://docpad.org/&quot;&gt;DocPad&lt;/a&gt;. Built with &lt;a href=&quot;https://purecss.io/&quot;&gt;PureCSS&lt;/a&gt;.
+		&lt;/a&gt;
+		&lt;br/&gt;
+		&amp;copy; Mikeumus 2018.
+		last updated at 2018-04-18T08:26:36.747Z
+	&lt;/div&gt;
+&lt;/div&gt;
+	&lt;!-- Scripts --&gt;
+	
+&lt;/body&gt;
+&lt;/html&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>Vanilla JavaScript Calendar [Dev Entry Feb 16th 2016]</title>
+			<link href="http://mikeumus.github.io/mikeumus.docpad//posts/vanilla-javascript-calendar"/>
+			<updated>2016-02-16T05:53:48.000Z</updated>
+			<id>http://mikeumus.github.io/mikeumus.docpad//posts/vanilla-javascript-calendar</id>
+			<content type="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+	&lt;!-- Meta --&gt;
+	&lt;meta charset=&quot;utf-8&quot; /&gt;
+
+	&lt;!-- Mobile viewport optimized: h5bp.com/viewport --&gt;
+	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+	&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+	
+	&lt;!-- Chrome, Firefox OS and Opera --&gt;
+	&lt;meta name=&quot;theme-color&quot; content=&quot;#fcfcfc&quot;&gt;
+	&lt;!-- Windows Phone --&gt;
+	&lt;meta name=&quot;msapplication-navbutton-color&quot; content=&quot;#fcfcfc&quot;&gt;
+	&lt;!-- iOS Safari --&gt;
+	&lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;#fcfcfc&quot;&gt;
+
+	&lt;!-- Use the .htaccess and remove these lines to avoid edge case issues.
+	   More info: h5bp.com/i/378 --&gt;
+	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;
+
+	&lt;!-- Our site title and description --&gt;
+	&lt;title&gt;Vanilla JavaScript Calendar [Dev Entry Feb 16th 2016] | Mikeumus&lt;/title&gt;
+	&lt;meta name=&quot;description&quot; content=&quot;Mikeumus' blog.&quot; /&gt;
+	&lt;meta name=&quot;keywords&quot; content=&quot;michaelduanemooring, michael duane mooring, michael mooring, mikeumus&quot; /&gt;
+	&lt;meta name=&quot;author&quot; content=&quot;Mikeumus&quot; /&gt;
+
+	&lt;!-- Output DocPad produced meta elements --&gt;
+	&lt;meta name=&quot;generator&quot; content=&quot;DocPad v6.78.4&quot; /&gt;
+
+	&lt;!-- Shims: IE6-8 support of HTML5 elements --&gt;
+	&lt;!--[if lt IE 9]&gt;
+		&lt;script async src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
+	&lt;![endif]--&gt;
+
+	&lt;!-- Styles --&gt;
+	&lt;link  rel=&quot;stylesheet&quot; href=&quot;//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css&quot; /&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot; /&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;styles/style.css&quot; /&gt;
+
+	&lt;!-- Typekit ajf8ggy.js --&gt;
+	&lt;script&gt;
+    try { Typekit.load(); } catch (e) {}
+	&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;!-- Markup --&gt;
+&lt;div class=&quot;content main pure-g-r&quot;&gt;
+	&lt;div class=&quot;main-inner&quot;&gt;
+		&lt;div class=&quot;header pure-u-1&quot;&gt;
+			&lt;div class=&quot;pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal&quot;&gt;
+				&lt;a href=&quot;/&quot;&gt;&lt;span class=&quot;pure-menu-heading&quot;&gt;Mikeumus&lt;/span&gt;&lt;/a&gt;
+				&lt;ul&gt;
+					
+						&lt;li typeof=&quot;sioc:Page&quot; about=&quot;/pages/resume&quot; class=&quot;&quot;&gt;
+							&lt;a class=&quot;pure-button white-bg&quot; href=&quot;http://mikeumus.github.io/mikeumus.docpad/pages/resume.html&quot; property=&quot;dc:title&quot;&gt;Resume&lt;/a&gt;
+						&lt;/li&gt;
+					
+				&lt;/ul&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;article id=&quot;post&quot; class=&quot;post&quot;&gt;
+	&lt;h1&gt;Vanilla JavaScript Calendar [Dev Entry Feb 16th 2016]&lt;/h1&gt;
+	&lt;div class=&quot;post-content&quot;&gt;&lt;iframe src=&quot;https://mikeumus.github.io/vanilla-js-calendar/calendar.html&quot; style=&quot;border:0;&quot; width=&quot;100%&quot; height=&quot;999px&quot;&gt; &lt;/iframe&gt;&lt;/div&gt;
+&lt;/article&gt;
+
+&lt;div&gt;
+	&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+	(function(){
+		window.disqus_shortname = '4463093';
+		window.disqus_developer = '1';
+		window.disqus_url = 'http://mikeumus.github.io/mikeumus.docpad/posts/vanilla-javascript-calendar';
+		window.disqus_identifier = 'posts-vanilla-javascript-calendar';
+		window.disqus_title = 'Vanilla JavaScript Calendar [Dev Entry Feb 16th 2016]';
+		if ( window.DISQUS ) {
+			return DISQUS.reset({
+				reload: true,
+				config: function () {
+					this.page.identifier = window.disqus_identifier;
+					this.page.url = window.disqus_url;
+					this.page.title = window.disqus_title;
+				}
+			});
+		}
+		else {
+		  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		}
+	})();
+&lt;/script&gt;
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;http://disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+&lt;a href=&quot;http://disqus.com&quot; class=&quot;dsq-brlink&quot;&gt;comments powered by &lt;span class=&quot;logo-disqus&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;footer&gt;
+	
+&lt;/footer&gt;
+
+	&lt;/div&gt;
+	&lt;!-- &lt;a href=&quot;pages/achive&quot;&gt;Blog Archive&lt;/a&gt; --&gt;
+	&lt;div class=&quot;footer pure-u-1&quot;&gt;
+		Mikeum.us is &lt;a href=&quot;https://github.com/mikeumus/mikeumus.docpad&quot; target=&quot;_blank&quot;&gt;open-source on Github&lt;/a&gt;, hosted via &lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt;. Powered by &lt;a href=&quot;http://docpad.org/&quot;&gt;DocPad&lt;/a&gt;. Built with &lt;a href=&quot;https://purecss.io/&quot;&gt;PureCSS&lt;/a&gt;.
+		&lt;/a&gt;
+		&lt;br/&gt;
+		&amp;copy; Mikeumus 2018.
+		last updated at 2018-04-18T08:26:36.747Z
+	&lt;/div&gt;
+&lt;/div&gt;
+	&lt;!-- Scripts --&gt;
+	
+&lt;/body&gt;
+&lt;/html&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>A LiveCoding.tv stream of Setting up LetsEncrypt on Nginx</title>
+			<link href="http://mikeumus.github.io/mikeumus.docpad//posts/setup-nginx-letsencrypt-livecoding"/>
+			<updated>2016-02-16T05:53:43.000Z</updated>
+			<id>http://mikeumus.github.io/mikeumus.docpad//posts/setup-nginx-letsencrypt-livecoding</id>
+			<content type="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+	&lt;!-- Meta --&gt;
+	&lt;meta charset=&quot;utf-8&quot; /&gt;
+
+	&lt;!-- Mobile viewport optimized: h5bp.com/viewport --&gt;
+	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+	&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+	
+	&lt;!-- Chrome, Firefox OS and Opera --&gt;
+	&lt;meta name=&quot;theme-color&quot; content=&quot;#fcfcfc&quot;&gt;
+	&lt;!-- Windows Phone --&gt;
+	&lt;meta name=&quot;msapplication-navbutton-color&quot; content=&quot;#fcfcfc&quot;&gt;
+	&lt;!-- iOS Safari --&gt;
+	&lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;#fcfcfc&quot;&gt;
+
+	&lt;!-- Use the .htaccess and remove these lines to avoid edge case issues.
+	   More info: h5bp.com/i/378 --&gt;
+	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;
+
+	&lt;!-- Our site title and description --&gt;
+	&lt;title&gt;A LiveCoding.tv stream of Setting up LetsEncrypt on Nginx | Mikeumus&lt;/title&gt;
+	&lt;meta name=&quot;description&quot; content=&quot;Mikeumus' blog.&quot; /&gt;
+	&lt;meta name=&quot;keywords&quot; content=&quot;michaelduanemooring, michael duane mooring, michael mooring, mikeumus&quot; /&gt;
+	&lt;meta name=&quot;author&quot; content=&quot;Mikeumus&quot; /&gt;
+
+	&lt;!-- Output DocPad produced meta elements --&gt;
+	&lt;meta name=&quot;generator&quot; content=&quot;DocPad v6.78.4&quot; /&gt;
+
+	&lt;!-- Shims: IE6-8 support of HTML5 elements --&gt;
+	&lt;!--[if lt IE 9]&gt;
+		&lt;script async src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
+	&lt;![endif]--&gt;
+
+	&lt;!-- Styles --&gt;
+	&lt;link  rel=&quot;stylesheet&quot; href=&quot;//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css&quot; /&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot; /&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;styles/style.css&quot; /&gt;
+
+	&lt;!-- Typekit ajf8ggy.js --&gt;
+	&lt;script&gt;
+    try { Typekit.load(); } catch (e) {}
+	&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;!-- Markup --&gt;
+&lt;div class=&quot;content main pure-g-r&quot;&gt;
+	&lt;div class=&quot;main-inner&quot;&gt;
+		&lt;div class=&quot;header pure-u-1&quot;&gt;
+			&lt;div class=&quot;pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal&quot;&gt;
+				&lt;a href=&quot;/&quot;&gt;&lt;span class=&quot;pure-menu-heading&quot;&gt;Mikeumus&lt;/span&gt;&lt;/a&gt;
+				&lt;ul&gt;
+					
+						&lt;li typeof=&quot;sioc:Page&quot; about=&quot;/pages/resume&quot; class=&quot;&quot;&gt;
+							&lt;a class=&quot;pure-button white-bg&quot; href=&quot;http://mikeumus.github.io/mikeumus.docpad/pages/resume.html&quot; property=&quot;dc:title&quot;&gt;Resume&lt;/a&gt;
+						&lt;/li&gt;
+					
+				&lt;/ul&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;article id=&quot;post&quot; class=&quot;post&quot;&gt;
+	&lt;h1&gt;A LiveCoding.tv stream of Setting up LetsEncrypt on Nginx&lt;/h1&gt;
+	&lt;div class=&quot;post-content&quot;&gt;Setting up a free LetsEncrypt SSL Certificate on AWS with Nginx was the simplest SSL Cert install experience I've ever had. I followed a great DigitalOcean tutorial found here:
+
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-14-04&quot;&gt;
+        https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-14-04&lt;/li&gt;
+        &lt;/a&gt;
+&lt;/ul&gt;
+
+Watch my uneditted livestream on livecoding.tv of me setting up LetsEncrypt with it's &quot;Webroot&quot; plugin: 
+
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;https://www.livecoding.tv/video/setting-up-letsencrypt-ssl-on-nginx/&quot;&gt;
+            https://www.livecoding.tv/video/setting-up-letsencrypt-ssl-on-nginx/
+        &lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+
+Pardon I don't know if you could embed LiveCoding.tv videos a the time of this posting. :(&lt;/div&gt;
+&lt;/article&gt;
+
+&lt;div&gt;
+	&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+	(function(){
+		window.disqus_shortname = '4463093';
+		window.disqus_developer = '1';
+		window.disqus_url = 'http://mikeumus.github.io/mikeumus.docpad/posts/setup-nginx-letsencrypt-livecoding';
+		window.disqus_identifier = 'posts-setup-nginx-letsencrypt-livecoding';
+		window.disqus_title = 'A LiveCoding.tv stream of Setting up LetsEncrypt on Nginx';
+		if ( window.DISQUS ) {
+			return DISQUS.reset({
+				reload: true,
+				config: function () {
+					this.page.identifier = window.disqus_identifier;
+					this.page.url = window.disqus_url;
+					this.page.title = window.disqus_title;
+				}
+			});
+		}
+		else {
+		  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		}
+	})();
+&lt;/script&gt;
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;http://disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+&lt;a href=&quot;http://disqus.com&quot; class=&quot;dsq-brlink&quot;&gt;comments powered by &lt;span class=&quot;logo-disqus&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;footer&gt;
+	
+&lt;/footer&gt;
+
+	&lt;/div&gt;
+	&lt;!-- &lt;a href=&quot;pages/achive&quot;&gt;Blog Archive&lt;/a&gt; --&gt;
+	&lt;div class=&quot;footer pure-u-1&quot;&gt;
+		Mikeum.us is &lt;a href=&quot;https://github.com/mikeumus/mikeumus.docpad&quot; target=&quot;_blank&quot;&gt;open-source on Github&lt;/a&gt;, hosted via &lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt;. Powered by &lt;a href=&quot;http://docpad.org/&quot;&gt;DocPad&lt;/a&gt;. Built with &lt;a href=&quot;https://purecss.io/&quot;&gt;PureCSS&lt;/a&gt;.
+		&lt;/a&gt;
+		&lt;br/&gt;
+		&amp;copy; Mikeumus 2018.
+		last updated at 2018-04-18T08:26:36.747Z
+	&lt;/div&gt;
+&lt;/div&gt;
+	&lt;!-- Scripts --&gt;
+	
+&lt;/body&gt;
+&lt;/html&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>Backbone.js Podcast List [Dev Entry Jan 4th 2016]</title>
+			<link href="http://mikeumus.github.io/mikeumus.docpad//posts/backbone-js-podcast-list"/>
+			<updated>2016-02-16T05:53:35.000Z</updated>
+			<id>http://mikeumus.github.io/mikeumus.docpad//posts/backbone-js-podcast-list</id>
+			<content type="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+	&lt;!-- Meta --&gt;
+	&lt;meta charset=&quot;utf-8&quot; /&gt;
+
+	&lt;!-- Mobile viewport optimized: h5bp.com/viewport --&gt;
+	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+	&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+	
+	&lt;!-- Chrome, Firefox OS and Opera --&gt;
+	&lt;meta name=&quot;theme-color&quot; content=&quot;#fcfcfc&quot;&gt;
+	&lt;!-- Windows Phone --&gt;
+	&lt;meta name=&quot;msapplication-navbutton-color&quot; content=&quot;#fcfcfc&quot;&gt;
+	&lt;!-- iOS Safari --&gt;
+	&lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;#fcfcfc&quot;&gt;
+
+	&lt;!-- Use the .htaccess and remove these lines to avoid edge case issues.
+	   More info: h5bp.com/i/378 --&gt;
+	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;
+
+	&lt;!-- Our site title and description --&gt;
+	&lt;title&gt;Backbone.js Podcast List [Dev Entry Jan 4th 2016] | Mikeumus&lt;/title&gt;
+	&lt;meta name=&quot;description&quot; content=&quot;Mikeumus' blog.&quot; /&gt;
+	&lt;meta name=&quot;keywords&quot; content=&quot;michaelduanemooring, michael duane mooring, michael mooring, mikeumus&quot; /&gt;
+	&lt;meta name=&quot;author&quot; content=&quot;Mikeumus&quot; /&gt;
+
+	&lt;!-- Output DocPad produced meta elements --&gt;
+	&lt;meta name=&quot;generator&quot; content=&quot;DocPad v6.78.4&quot; /&gt;
+
+	&lt;!-- Shims: IE6-8 support of HTML5 elements --&gt;
+	&lt;!--[if lt IE 9]&gt;
+		&lt;script async src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
+	&lt;![endif]--&gt;
+
+	&lt;!-- Styles --&gt;
+	&lt;link  rel=&quot;stylesheet&quot; href=&quot;//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css&quot; /&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot; /&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;styles/style.css&quot; /&gt;
+
+	&lt;!-- Typekit ajf8ggy.js --&gt;
+	&lt;script&gt;
+    try { Typekit.load(); } catch (e) {}
+	&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;!-- Markup --&gt;
+&lt;div class=&quot;content main pure-g-r&quot;&gt;
+	&lt;div class=&quot;main-inner&quot;&gt;
+		&lt;div class=&quot;header pure-u-1&quot;&gt;
+			&lt;div class=&quot;pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal&quot;&gt;
+				&lt;a href=&quot;/&quot;&gt;&lt;span class=&quot;pure-menu-heading&quot;&gt;Mikeumus&lt;/span&gt;&lt;/a&gt;
+				&lt;ul&gt;
+					
+						&lt;li typeof=&quot;sioc:Page&quot; about=&quot;/pages/resume&quot; class=&quot;&quot;&gt;
+							&lt;a class=&quot;pure-button white-bg&quot; href=&quot;http://mikeumus.github.io/mikeumus.docpad/pages/resume.html&quot; property=&quot;dc:title&quot;&gt;Resume&lt;/a&gt;
+						&lt;/li&gt;
+					
+				&lt;/ul&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;article id=&quot;post&quot; class=&quot;post&quot;&gt;
+	&lt;h1&gt;Backbone.js Podcast List [Dev Entry Jan 4th 2016]&lt;/h1&gt;
+	&lt;div class=&quot;post-content&quot;&gt;&lt;p&gt;
+    I've been researhing and am starting to learn about backbone.js, which may seem kind of backwards with react and angular taking over and ember.js and things but my new gig uses backbone.js so I've been checking it out and it's philosophy is quite interesting. 
+&lt;/p&gt;
+
+&lt;p&gt;
+    It's all about helping organize and evolve your javascript/front-end code but is most minimal in mandating anything. It's designed to be super light-weight and for you to build atop. Common use-case is to organize your jQuery code.
+&lt;/p&gt;
+
+Simply a list of Backbone.js Podcasts I've found:
+
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;http://www.sitepoint.com/podcast-145-backbone-js-fundamentals-with-addy-osmani/&quot;&gt;
+            SitePoint Podcast #145: Backbone.js Fundamentals with Addy Osmani
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;http://build-podcast.com/backbonejs/&quot;&gt;Build Podcast Backbone.js&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;http://www.funnyant.com/backbone-and-marionette-derick-bailey/&quot;&gt;
+            Front-End Developer Cast Episode 1 | Backbone.js and Marionette.js w/ Derick Bailey
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;http://upfrontpodcast.com/2013/02/01/episode2.html&quot;&gt;
+            UpFront Episode 2 - JavaScript Applications with Derick Bailey
+        &lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+
+&lt;hr&gt;
+
+&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+
+I've backed them up on Google Drive just in case something happens to them:
+
+&lt;br/&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;444&quot; src=&quot;https://130dad447d676d5f804ad210cd37e66efd3319bb.googledrive.com/host/0B9LVk4xbDIJTUm8xWXVGSnVBOVE/&quot;&gt; &lt;/iframe&gt;
+
+&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;
+&lt;/article&gt;
+
+&lt;div&gt;
+	&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+	(function(){
+		window.disqus_shortname = '4463093';
+		window.disqus_developer = '1';
+		window.disqus_url = 'http://mikeumus.github.io/mikeumus.docpad/posts/backbone-js-podcast-list';
+		window.disqus_identifier = 'posts-backbone-js-podcast-list';
+		window.disqus_title = 'Backbone.js Podcast List [Dev Entry Jan 4th 2016]';
+		if ( window.DISQUS ) {
+			return DISQUS.reset({
+				reload: true,
+				config: function () {
+					this.page.identifier = window.disqus_identifier;
+					this.page.url = window.disqus_url;
+					this.page.title = window.disqus_title;
+				}
+			});
+		}
+		else {
+		  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		}
+	})();
+&lt;/script&gt;
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;http://disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+&lt;a href=&quot;http://disqus.com&quot; class=&quot;dsq-brlink&quot;&gt;comments powered by &lt;span class=&quot;logo-disqus&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;footer&gt;
+	
+&lt;/footer&gt;
+
+	&lt;/div&gt;
+	&lt;!-- &lt;a href=&quot;pages/achive&quot;&gt;Blog Archive&lt;/a&gt; --&gt;
+	&lt;div class=&quot;footer pure-u-1&quot;&gt;
+		Mikeum.us is &lt;a href=&quot;https://github.com/mikeumus/mikeumus.docpad&quot; target=&quot;_blank&quot;&gt;open-source on Github&lt;/a&gt;, hosted via &lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt;. Powered by &lt;a href=&quot;http://docpad.org/&quot;&gt;DocPad&lt;/a&gt;. Built with &lt;a href=&quot;https://purecss.io/&quot;&gt;PureCSS&lt;/a&gt;.
+		&lt;/a&gt;
+		&lt;br/&gt;
+		&amp;copy; Mikeumus 2018.
+		last updated at 2018-04-18T08:26:36.747Z
+	&lt;/div&gt;
+&lt;/div&gt;
+	&lt;!-- Scripts --&gt;
+	
+&lt;/body&gt;
+&lt;/html&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>The Captain's Log - &quot;GetBase.com - CRM Windows Phone app!&quot; [Biz Entry Aug 2nd]</title>
+			<link href="http://mikeumus.github.io/mikeumus.docpad//posts/Business-Entry_August-2nd-again-2013"/>
+			<updated>2016-02-16T03:54:24.000Z</updated>
+			<id>http://mikeumus.github.io/mikeumus.docpad//posts/Business-Entry_August-2nd-again-2013</id>
+			<content type="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+	&lt;!-- Meta --&gt;
+	&lt;meta charset=&quot;utf-8&quot; /&gt;
+
+	&lt;!-- Mobile viewport optimized: h5bp.com/viewport --&gt;
+	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+	&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+	
+	&lt;!-- Chrome, Firefox OS and Opera --&gt;
+	&lt;meta name=&quot;theme-color&quot; content=&quot;#fcfcfc&quot;&gt;
+	&lt;!-- Windows Phone --&gt;
+	&lt;meta name=&quot;msapplication-navbutton-color&quot; content=&quot;#fcfcfc&quot;&gt;
+	&lt;!-- iOS Safari --&gt;
+	&lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;#fcfcfc&quot;&gt;
+
+	&lt;!-- Use the .htaccess and remove these lines to avoid edge case issues.
+	   More info: h5bp.com/i/378 --&gt;
+	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;
+
+	&lt;!-- Our site title and description --&gt;
+	&lt;title&gt;The Captain's Log - &amp;quot;GetBase.com - CRM Windows Phone app!&amp;quot; [Biz Entry Aug 2nd] | Mikeumus&lt;/title&gt;
+	&lt;meta name=&quot;description&quot; content=&quot;Mikeumus' blog.&quot; /&gt;
+	&lt;meta name=&quot;keywords&quot; content=&quot;michaelduanemooring, michael duane mooring, michael mooring, mikeumus&quot; /&gt;
+	&lt;meta name=&quot;author&quot; content=&quot;Mikeumus&quot; /&gt;
+
+	&lt;!-- Output DocPad produced meta elements --&gt;
+	&lt;meta name=&quot;generator&quot; content=&quot;DocPad v6.78.4&quot; /&gt;
+
+	&lt;!-- Shims: IE6-8 support of HTML5 elements --&gt;
+	&lt;!--[if lt IE 9]&gt;
+		&lt;script async src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
+	&lt;![endif]--&gt;
+
+	&lt;!-- Styles --&gt;
+	&lt;link  rel=&quot;stylesheet&quot; href=&quot;//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css&quot; /&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot; /&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;styles/style.css&quot; /&gt;
+
+	&lt;!-- Typekit ajf8ggy.js --&gt;
+	&lt;script&gt;
+    try { Typekit.load(); } catch (e) {}
+	&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;!-- Markup --&gt;
+&lt;div class=&quot;content main pure-g-r&quot;&gt;
+	&lt;div class=&quot;main-inner&quot;&gt;
+		&lt;div class=&quot;header pure-u-1&quot;&gt;
+			&lt;div class=&quot;pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal&quot;&gt;
+				&lt;a href=&quot;/&quot;&gt;&lt;span class=&quot;pure-menu-heading&quot;&gt;Mikeumus&lt;/span&gt;&lt;/a&gt;
+				&lt;ul&gt;
+					
+						&lt;li typeof=&quot;sioc:Page&quot; about=&quot;/pages/resume&quot; class=&quot;&quot;&gt;
+							&lt;a class=&quot;pure-button white-bg&quot; href=&quot;http://mikeumus.github.io/mikeumus.docpad/pages/resume.html&quot; property=&quot;dc:title&quot;&gt;Resume&lt;/a&gt;
+						&lt;/li&gt;
+					
+				&lt;/ul&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;article id=&quot;post&quot; class=&quot;post&quot;&gt;
+	&lt;h1&gt;The Captain's Log - &amp;quot;GetBase.com - CRM Windows Phone app!&amp;quot; [Biz Entry Aug 2nd]&lt;/h1&gt;
+	&lt;div class=&quot;post-content&quot;&gt;It's still Aug 2nd! So Base (&lt;a target=&quot;_blank&quot; href=&quot;https://getbase.com/&quot;&gt;GetBase.com&lt;/a&gt;) is pretty nifty. On my &lt;a target=&quot;_blank&quot; href=&quot;http://www.windowsphone.com/&quot;data-placement=&quot;below&quot; rel=&quot;tipsy&quot; data-content=&quot;So Nokia is being featured with a 41 megapixel phone on WindowsPhone.com, bad ass.&quot;&gt;Windows Phone&lt;/a&gt; I always feel so helpless business wise because I had no app to see metrics and push buttons that actually did stuff until I revisited Base today and found it has a app for Windows Phone that I can see where sales are at. You can pin different tiles to your home and my favorite is the pipeline total. How motivating is that to see a huge dollar amount waiting for you on your phone's home screen? It makes me feel like, &quot;Okay, what's next? Let's push it forward!&quot;
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+Oh and I don't know if you've ever received a lead from Twitter but, seems like Twitter is a friendly, less competitive route to go from my experience. Which reminds me, I wonder is there is a Hootsuite app for Windows Phone?...
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+There wasn't, but I would have bet against there being one. The Windows Phone app market is a wary place for many of big app holders to invest in seems. &lt;a target=&quot;_blank&quot; href=&quot;https://voxer.com/&quot; data-placement=&quot;below&quot; rel=&quot;tipsy&quot; data-content=&quot;An app that turns your phone into a walkie-talkie, nifty I tell you.&quot;&gt;Voxer&lt;/a&gt; is a Windows Phone app now though so, Yay for Voxer!&lt;/div&gt;
+&lt;/article&gt;
+
+&lt;div&gt;
+	&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+	(function(){
+		window.disqus_shortname = '4463093';
+		window.disqus_developer = '1';
+		window.disqus_url = 'http://mikeumus.github.io/mikeumus.docpad/posts/Business-Entry_August-2nd-again-2013';
+		window.disqus_identifier = 'posts-Business-Entry-August-2nd-again-2013';
+		window.disqus_title = 'The Captain's Log - &quot;GetBase.com - CRM Windows Phone app!&quot; [Biz Entry Aug 2nd]';
+		if ( window.DISQUS ) {
+			return DISQUS.reset({
+				reload: true,
+				config: function () {
+					this.page.identifier = window.disqus_identifier;
+					this.page.url = window.disqus_url;
+					this.page.title = window.disqus_title;
+				}
+			});
+		}
+		else {
+		  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		}
+	})();
+&lt;/script&gt;
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;http://disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+&lt;a href=&quot;http://disqus.com&quot; class=&quot;dsq-brlink&quot;&gt;comments powered by &lt;span class=&quot;logo-disqus&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;footer&gt;
+	
+&lt;/footer&gt;
+
+	&lt;/div&gt;
+	&lt;!-- &lt;a href=&quot;pages/achive&quot;&gt;Blog Archive&lt;/a&gt; --&gt;
+	&lt;div class=&quot;footer pure-u-1&quot;&gt;
+		Mikeum.us is &lt;a href=&quot;https://github.com/mikeumus/mikeumus.docpad&quot; target=&quot;_blank&quot;&gt;open-source on Github&lt;/a&gt;, hosted via &lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt;. Powered by &lt;a href=&quot;http://docpad.org/&quot;&gt;DocPad&lt;/a&gt;. Built with &lt;a href=&quot;https://purecss.io/&quot;&gt;PureCSS&lt;/a&gt;.
+		&lt;/a&gt;
+		&lt;br/&gt;
+		&amp;copy; Mikeumus 2018.
+		last updated at 2018-04-18T08:26:36.747Z
+	&lt;/div&gt;
+&lt;/div&gt;
+	&lt;!-- Scripts --&gt;
+	
+&lt;/body&gt;
+&lt;/html&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>The Captain's Log - &quot;Hobby-like&quot; [Business Entry August 2nd 2013]</title>
+			<link href="http://mikeumus.github.io/mikeumus.docpad//posts/Business-Entry_August-2nd-2013"/>
+			<updated>2016-02-16T03:54:16.000Z</updated>
+			<id>http://mikeumus.github.io/mikeumus.docpad//posts/Business-Entry_August-2nd-2013</id>
+			<content type="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+	&lt;!-- Meta --&gt;
+	&lt;meta charset=&quot;utf-8&quot; /&gt;
+
+	&lt;!-- Mobile viewport optimized: h5bp.com/viewport --&gt;
+	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+	&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+	
+	&lt;!-- Chrome, Firefox OS and Opera --&gt;
+	&lt;meta name=&quot;theme-color&quot; content=&quot;#fcfcfc&quot;&gt;
+	&lt;!-- Windows Phone --&gt;
+	&lt;meta name=&quot;msapplication-navbutton-color&quot; content=&quot;#fcfcfc&quot;&gt;
+	&lt;!-- iOS Safari --&gt;
+	&lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;#fcfcfc&quot;&gt;
+
+	&lt;!-- Use the .htaccess and remove these lines to avoid edge case issues.
+	   More info: h5bp.com/i/378 --&gt;
+	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;
+
+	&lt;!-- Our site title and description --&gt;
+	&lt;title&gt;The Captain's Log - &amp;quot;Hobby-like&amp;quot; [Business Entry August 2nd 2013] | Mikeumus&lt;/title&gt;
+	&lt;meta name=&quot;description&quot; content=&quot;Mikeumus' blog.&quot; /&gt;
+	&lt;meta name=&quot;keywords&quot; content=&quot;michaelduanemooring, michael duane mooring, michael mooring, mikeumus&quot; /&gt;
+	&lt;meta name=&quot;author&quot; content=&quot;Mikeumus&quot; /&gt;
+
+	&lt;!-- Output DocPad produced meta elements --&gt;
+	&lt;meta name=&quot;generator&quot; content=&quot;DocPad v6.78.4&quot; /&gt;
+
+	&lt;!-- Shims: IE6-8 support of HTML5 elements --&gt;
+	&lt;!--[if lt IE 9]&gt;
+		&lt;script async src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
+	&lt;![endif]--&gt;
+
+	&lt;!-- Styles --&gt;
+	&lt;link  rel=&quot;stylesheet&quot; href=&quot;//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css&quot; /&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot; /&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;styles/style.css&quot; /&gt;
+
+	&lt;!-- Typekit ajf8ggy.js --&gt;
+	&lt;script&gt;
+    try { Typekit.load(); } catch (e) {}
+	&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;!-- Markup --&gt;
+&lt;div class=&quot;content main pure-g-r&quot;&gt;
+	&lt;div class=&quot;main-inner&quot;&gt;
+		&lt;div class=&quot;header pure-u-1&quot;&gt;
+			&lt;div class=&quot;pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal&quot;&gt;
+				&lt;a href=&quot;/&quot;&gt;&lt;span class=&quot;pure-menu-heading&quot;&gt;Mikeumus&lt;/span&gt;&lt;/a&gt;
+				&lt;ul&gt;
+					
+						&lt;li typeof=&quot;sioc:Page&quot; about=&quot;/pages/resume&quot; class=&quot;&quot;&gt;
+							&lt;a class=&quot;pure-button white-bg&quot; href=&quot;http://mikeumus.github.io/mikeumus.docpad/pages/resume.html&quot; property=&quot;dc:title&quot;&gt;Resume&lt;/a&gt;
+						&lt;/li&gt;
+					
+				&lt;/ul&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;article id=&quot;post&quot; class=&quot;post&quot;&gt;
+	&lt;h1&gt;The Captain's Log - &amp;quot;Hobby-like&amp;quot; [Business Entry August 2nd 2013]&lt;/h1&gt;
+	&lt;div class=&quot;post-content&quot;&gt;It's 4:40am. Up too late again but I had this revelation whilst in the rest room before bed abour keeping a business diary. I have a feeling I've thought this idea up at least once before but years ago and now that I'm keeping my dream journal I figured to add a business one. 
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+Early to bed, early to rise make a man healthy, weathly and wise. That's not been my pattern of late. I've been up till 3am and sleep till 11 or 12noon. It's not the most adventagious schedule and I beleive there is smoething to seeing the sun rise in the morning that is very boosting in a direct health way of sorts I hypothesize. So this un-worthy sleep cycle is needing to be replaced. My plan tonight (or this morning) is to wake up in a couple hours and power through the day just taking a few breaks every 15 minutes or so to scretch, work on some chores ect... and then retire at 10pm. 
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+I re-fathomed recently that in any given day I'm awake 16 hours. Which in theory could give 12 hours to work and 4 to misc things. However it never really works out as planned. In fact for me plans have never ever worked. I blame myself and my dicipline, but because of my unsuccessful career of planning I now avoid them and have been opperating sometime without a written one. I need one. I need to spend time working out and meditating on my plan. I need my plan to be my mantra. I already have my vision in tact and it's been waiting for years now as I toil hobby-like trying to skip stones to the other side of the lake. 
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+Now about today. I spent about 6 hours or so (4 more hours than allotted) on my one of two client projects as I was working and re-working it to add a list of new specialty features that nor I or the client have insisted upon. I always do this. I turn each project from a business project, into a hobby-like one. Sure I always learn new things but it makes the project late and in-turn, very much not profitable working well below minimum wage surely all expenses aside. At least in this case the client understands mostly and in concerned that the project is profitable for me and doesn't want me to spend more hours than need be. This is litterally a first. I think it's a sign. The voice of God litterally coming through my client's mouth. Wrap that website up McDonald's style and get it out the door Mike! Your 24, this is and can no longer be a hooby business. A business that actually costs you money to opperate. Truely qualifies as a hobby and I'm not repeating the word hobby over and over again because it's been preached to me by a parent or relative becuase it really hasn't, I'm saying it because of it's features, namely the lack of profitability.  
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+It's time to suit up. (I wonder if there is a proper/effective way to journal with intension like my intension is now with this first entry of my personal business journal). I think I'll call these, The Captain's Log, moving forward. Actually I'm going to change it now.  :)&lt;/div&gt;
+&lt;/article&gt;
+
+&lt;div&gt;
+	&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+	(function(){
+		window.disqus_shortname = '4463093';
+		window.disqus_developer = '1';
+		window.disqus_url = 'http://mikeumus.github.io/mikeumus.docpad/posts/Business-Entry_August-2nd-2013';
+		window.disqus_identifier = 'posts-Business-Entry-August-2nd-2013';
+		window.disqus_title = 'The Captain's Log - &quot;Hobby-like&quot; [Business Entry August 2nd 2013]';
+		if ( window.DISQUS ) {
+			return DISQUS.reset({
+				reload: true,
+				config: function () {
+					this.page.identifier = window.disqus_identifier;
+					this.page.url = window.disqus_url;
+					this.page.title = window.disqus_title;
+				}
+			});
+		}
+		else {
+		  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		}
+	})();
+&lt;/script&gt;
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;http://disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+&lt;a href=&quot;http://disqus.com&quot; class=&quot;dsq-brlink&quot;&gt;comments powered by &lt;span class=&quot;logo-disqus&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;footer&gt;
+	
+&lt;/footer&gt;
+
+	&lt;/div&gt;
+	&lt;!-- &lt;a href=&quot;pages/achive&quot;&gt;Blog Archive&lt;/a&gt; --&gt;
+	&lt;div class=&quot;footer pure-u-1&quot;&gt;
+		Mikeum.us is &lt;a href=&quot;https://github.com/mikeumus/mikeumus.docpad&quot; target=&quot;_blank&quot;&gt;open-source on Github&lt;/a&gt;, hosted via &lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt;. Powered by &lt;a href=&quot;http://docpad.org/&quot;&gt;DocPad&lt;/a&gt;. Built with &lt;a href=&quot;https://purecss.io/&quot;&gt;PureCSS&lt;/a&gt;.
+		&lt;/a&gt;
+		&lt;br/&gt;
+		&amp;copy; Mikeumus 2018.
+		last updated at 2018-04-18T08:26:36.747Z
+	&lt;/div&gt;
+&lt;/div&gt;
+	&lt;!-- Scripts --&gt;
+	
+&lt;/body&gt;
+&lt;/html&gt;
+</content>
+		</entry>
+	
+		<entry>
+			<title>LunarLions interview</title>
+			<link href="http://mikeumus.github.io/mikeumus.docpad//posts/lunarlions-interview"/>
+			<updated>2016-02-16T03:48:21.000Z</updated>
+			<id>http://mikeumus.github.io/mikeumus.docpad//posts/lunarlions-interview</id>
+			<content type="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+	&lt;!-- Meta --&gt;
+	&lt;meta charset=&quot;utf-8&quot; /&gt;
+
+	&lt;!-- Mobile viewport optimized: h5bp.com/viewport --&gt;
+	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+	&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+	
+	&lt;!-- Chrome, Firefox OS and Opera --&gt;
+	&lt;meta name=&quot;theme-color&quot; content=&quot;#fcfcfc&quot;&gt;
+	&lt;!-- Windows Phone --&gt;
+	&lt;meta name=&quot;msapplication-navbutton-color&quot; content=&quot;#fcfcfc&quot;&gt;
+	&lt;!-- iOS Safari --&gt;
+	&lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;#fcfcfc&quot;&gt;
+
+	&lt;!-- Use the .htaccess and remove these lines to avoid edge case issues.
+	   More info: h5bp.com/i/378 --&gt;
+	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;
+
+	&lt;!-- Our site title and description --&gt;
+	&lt;title&gt;LunarLions interview | Mikeumus&lt;/title&gt;
+	&lt;meta name=&quot;description&quot; content=&quot;Mikeumus' blog.&quot; /&gt;
+	&lt;meta name=&quot;keywords&quot; content=&quot;michaelduanemooring, michael duane mooring, michael mooring, mikeumus&quot; /&gt;
+	&lt;meta name=&quot;author&quot; content=&quot;Mikeumus&quot; /&gt;
+
+	&lt;!-- Output DocPad produced meta elements --&gt;
+	&lt;meta name=&quot;generator&quot; content=&quot;DocPad v6.78.4&quot; /&gt;
+
+	&lt;!-- Shims: IE6-8 support of HTML5 elements --&gt;
+	&lt;!--[if lt IE 9]&gt;
+		&lt;script async src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
+	&lt;![endif]--&gt;
+
+	&lt;!-- Styles --&gt;
+	&lt;link  rel=&quot;stylesheet&quot; href=&quot;//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css&quot; /&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot; /&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;styles/style.css&quot; /&gt;
+
+	&lt;!-- Typekit ajf8ggy.js --&gt;
+	&lt;script&gt;
+    try { Typekit.load(); } catch (e) {}
+	&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;!-- Markup --&gt;
+&lt;div class=&quot;content main pure-g-r&quot;&gt;
+	&lt;div class=&quot;main-inner&quot;&gt;
+		&lt;div class=&quot;header pure-u-1&quot;&gt;
+			&lt;div class=&quot;pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal&quot;&gt;
+				&lt;a href=&quot;/&quot;&gt;&lt;span class=&quot;pure-menu-heading&quot;&gt;Mikeumus&lt;/span&gt;&lt;/a&gt;
+				&lt;ul&gt;
+					
+						&lt;li typeof=&quot;sioc:Page&quot; about=&quot;/pages/resume&quot; class=&quot;&quot;&gt;
+							&lt;a class=&quot;pure-button white-bg&quot; href=&quot;http://mikeumus.github.io/mikeumus.docpad/pages/resume.html&quot; property=&quot;dc:title&quot;&gt;Resume&lt;/a&gt;
+						&lt;/li&gt;
+					
+				&lt;/ul&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;article id=&quot;post&quot; class=&quot;post&quot;&gt;
+	&lt;h1&gt;LunarLions interview&lt;/h1&gt;
+	&lt;div class=&quot;post-content&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/8Mq_v4TCqFw&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+
+I had the great opportunity to meet a Lunar Lion at HackPSU which led to this interview in April 2014. Learn more about the Lunar Lions XPRIZE Team at &lt;a href=&quot;http://lunarlion.psu.edu/&quot;&gt;http://lunarlion.psu.edu/&lt;/a&gt;
+&lt;br/&gt;&lt;br/&gt;
+Right now the team is raising 400k for their moon mission and they're (at the time of this writing) 41% the way there. Please do be an awesome part of space history and contribute to the funding here:
+&lt;a href=&quot;http://www.rockethub.com/34210&quot;&gt;http://www.rockethub.com/34210&lt;/a&gt;
+
+&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;
+&lt;/article&gt;
+
+&lt;div&gt;
+	&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+	(function(){
+		window.disqus_shortname = '4463093';
+		window.disqus_developer = '1';
+		window.disqus_url = 'http://mikeumus.github.io/mikeumus.docpad/posts/lunarlions-interview';
+		window.disqus_identifier = 'posts-lunarlions-interview';
+		window.disqus_title = 'LunarLions interview';
+		if ( window.DISQUS ) {
+			return DISQUS.reset({
+				reload: true,
+				config: function () {
+					this.page.identifier = window.disqus_identifier;
+					this.page.url = window.disqus_url;
+					this.page.title = window.disqus_title;
+				}
+			});
+		}
+		else {
+		  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		}
+	})();
+&lt;/script&gt;
+&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;http://disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
+&lt;a href=&quot;http://disqus.com&quot; class=&quot;dsq-brlink&quot;&gt;comments powered by &lt;span class=&quot;logo-disqus&quot;&gt;Disqus&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;footer&gt;
+	
+&lt;/footer&gt;
+
+	&lt;/div&gt;
+	&lt;!-- &lt;a href=&quot;pages/achive&quot;&gt;Blog Archive&lt;/a&gt; --&gt;
+	&lt;div class=&quot;footer pure-u-1&quot;&gt;
+		Mikeum.us is &lt;a href=&quot;https://github.com/mikeumus/mikeumus.docpad&quot; target=&quot;_blank&quot;&gt;open-source on Github&lt;/a&gt;, hosted via &lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt;. Powered by &lt;a href=&quot;http://docpad.org/&quot;&gt;DocPad&lt;/a&gt;. Built with &lt;a href=&quot;https://purecss.io/&quot;&gt;PureCSS&lt;/a&gt;.
+		&lt;/a&gt;
+		&lt;br/&gt;
+		&amp;copy; Mikeumus 2018.
+		last updated at 2018-04-18T08:26:36.747Z
+	&lt;/div&gt;
+&lt;/div&gt;
+	&lt;!-- Scripts --&gt;
+	
+&lt;/body&gt;
+&lt;/html&gt;
+</content>
+		</entry>
+	
+</feed>
