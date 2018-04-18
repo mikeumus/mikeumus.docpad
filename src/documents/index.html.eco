@@ -34,10 +34,10 @@ title: 'Home'
                     <% for document in @getCollection('posts').toJSON(): %>
                         <li>
                             <%- document.icon %>
-                            <a class="home-post-title" href=".<%= document.url %>">
+                            <a class="home-post-title" href=".<%= document.url %>.html">
                         <%= document.title %> </a>
                         <!-- &raquo; <span>Updated <%= document.date.toDateString() %></span> -->
-                        <a href=".<%= document.url %>" class="pure-button">READ</a>
+                        <a href=".<%= document.url %>.html" class="pure-button">READ</a>
 
                         </li>
                     <% end %>

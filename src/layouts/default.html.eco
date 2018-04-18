@@ -48,11 +48,11 @@
 	<div class="main-inner">
 		<div class="header pure-u-1">
 			<div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
-				<a href="/"><span class="pure-menu-heading">Mikeum.us</span></a>
+				<a href="/"><span class="pure-menu-heading">Mikeumus</span></a>
 				<ul>
 					<% for document in @getCollection('pages').toJSON(): %>
-						<li typeof="sioc:Page" about="./<%= document.url %>" class="<%= 'active'  if @document.url is document.url %>">
-							<a class="pure-button white-bg" href=".<%= document.url %>" property="dc:title">Resume</a>
+						<li typeof="sioc:Page" about=".<%= document.url %>" class="<%= 'active' if @document.url is document.url %>">
+							<a class="pure-button white-bg" href=".<%= document.url %>.html" property="dc:title">Resume</a>
 						</li>
 					<% end %>
 				</ul>
