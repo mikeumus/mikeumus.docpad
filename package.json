@@ -1,6 +1,6 @@
 {
-  "name": "mikeum.us",
-  "version": "0.0.1",
+  "name": "mikeumus",
+  "version": "0.0.2",
   "description": "Michael 'Mikeumus' Duane Mooring's personal website.",
   "keywords": [
     "docpad",
@@ -8,7 +8,7 @@
     "mikeumus",
     "Michael Duane Mooring"
   ],
-  "author": "Mass Distribution Media <mike@mdm.cm> (http://mdm.cm)",
+  "author": "Mass Distribution Media <mike@mdm.cm> (https://mdm.cm)",
   "maintainers": [
     "Michael D Mooring <mike@mdm.cm> (https://github.com/mikeumus)"
   ],
@@ -16,11 +16,11 @@
     "Michael D Mooring <mike@mdm.cm> (https://github.com/mikeumus)"
   ],
   "bugs": {
-    "url": "https://github.com/mikeumus/mikeum.us/issues"
+    "url": "https://github.com/mikeumus/mikeumus/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mikeumus/mikeum.us.git"
+    "url": "https://github.com/mikeumus/mikeumus.git"
   },
   "engines": {
     "node": ">=0.10",
@@ -28,7 +28,6 @@
   },
   "dependencies": {
     "docpad": "~6.78.4",
-    "docpad-plugin-cleanurls": "~2.8.1",
     "docpad-plugin-coffeescript": "~2.5.0",
     "docpad-plugin-downloader": "~2.1.4",
     "docpad-plugin-eco": "~2.1.0",
