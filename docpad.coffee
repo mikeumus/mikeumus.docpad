@@ -20,7 +20,8 @@ docpadConfig = {
 			# Here are some old site urls that you would like to redirect from
 			oldUrls: [
 				'michaelduanemooring.com',
-				'mikeumus.com'
+				'mikeumus.com',
+				'mikeum.us'
 			]
 
 			# The default title of our website
