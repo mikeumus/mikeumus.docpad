@@ -8,12 +8,12 @@
     "mikeumus",
     "Michael Duane Mooring"
   ],
-  "author": "Mass Distribution Media <mike@mdm.cm> (https://mdm.cm)",
+  "author": "Mass Distribution Media <m@bevry.me> (https://mdm.cc)",
   "maintainers": [
-    "Michael D Mooring <mike@mdm.cm> (https://github.com/mikeumus)"
+    "Michael D Mooring <m@bevry.me (https://github.com/mikeumus)"
   ],
   "contributors": [
-    "Michael D Mooring <mike@mdm.cm> (https://github.com/mikeumus)"
+    "Michael D Mooring <m@bevry.me> (https://github.com/mikeumus)"
   ],
   "bugs": {
     "url": "https://github.com/mikeumus/mikeumus/issues"
@@ -27,18 +27,18 @@
     "npm": ">=1.2"
   },
   "dependencies": {
-    "docpad": "~6.78.4",
-    "docpad-plugin-coffeescript": "~2.5.0",
-    "docpad-plugin-downloader": "~2.1.4",
-    "docpad-plugin-eco": "~2.1.0",
-    "docpad-plugin-ghpages": "~2.4.4",
-    "docpad-plugin-less": "~2.4.1",
-    "docpad-plugin-marked": "~2.3.0",
-    "docpad-plugin-partials": "~2.9.2",
-    "docpad-plugin-related": "~2.2.2",
-    "docpad-plugin-services": "~2.6.0",
-    "docpad-plugin-stylus": "~2.11.0",
-    "docpad-plugin-text": "~2.3.3"
+    "docpad": "~6.82.1",
+    "docpad-plugin-coffeescript": "~2.7.0",
+    "docpad-plugin-downloader": "~2.4.0",
+    "docpad-plugin-eco": "~2.3.0",
+    "docpad-plugin-ghpages": "~2.7.0",
+    "docpad-plugin-less": "~2.6.0",
+    "docpad-plugin-marked": "~2.5.0",
+    "docpad-plugin-partials": "~2.13.0",
+    "docpad-plugin-related": "~2.4.0",
+    "docpad-plugin-services": "~2.8.0",
+    "docpad-plugin-stylus": "~2.14.0",
+    "docpad-plugin-text": "~2.6.0"
   },
   "devDependencies": {},
   "main": "node_modules/docpad/bin/docpad-server",
